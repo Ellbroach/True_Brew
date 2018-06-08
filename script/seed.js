@@ -1,11 +1,24 @@
 const db = require('../server/db')
-const { Show, ShowImage } = require('../server/db/models')
+const { Show } = require('../server/db/models')
 const {User} = require('../server/db/models')
+const {Genre} = require('../server/db/models')
 const Chance = require('chance')
 
 
 const makeUsers = 10;
 const chance = new Chance(1555)
+
+const associateGenres = (genres, shows) => {
+  const showGenreAssociations = []
+  for (let show of shows){
+    const randomInt = chance.integer({
+      min: 0,
+      max: genres.length - 1
+    })
+    showGenreAssociations.push(show.setGenres(genres[randomInt]))
+  }
+  return showGenreAssociations
+}
 
 const createUsers = totalUsers => {
     const users = [
@@ -50,34 +63,24 @@ async function seed() {
     userList.forEach(user => User.create(user))
     console.log(`seeded ${userList.length} users`);
 
-    const shows = await Promise.all([
-      Show.create({ name: 'TEST 5', description: 'Amazingly yummy', price: 8.50, availability: 'available', quantity: 45, date: ['9/09/18']}),
-      Show.create({ name: 'Jalapeno Burgers', description: 'Amazingly yummy', price: 9.00, availability: 'available', quantity: 45, date: ['9/09/18']}),
-      Show.create({ name: 'Asian Salad', description: 'Amazingly yummy', price: 10.95, availability: 'available', quantity: 45, date: ['9/09/18']}),
-      Show.create({ name: 'Grandmas\'s Chicken Noodel Soup', description: 'Amazingly yummy', price: 9.95, availability: 'available', quantity: 18, date: ['9/09/18'] })
-    ]);
-    console.log(`seeded ${shows.length} shows`)
-    const baseUrl = 'http://127.0.0.1:8080';
-    const showImages = await Promise.all([
-      ShowImage.create({ imageUrl: baseUrl + '/resources/seedImages/1.jpeg', caption: 'TEST 2' }),
-      ShowImage.create({ imageUrl: baseUrl + '/resources/seedImages/2.jpeg', caption: 'ewwwwww' }),
-      ShowImage.create({ imageUrl: baseUrl + '/resources/seedImages/3.jpeg', caption: 'Looks weird, i think' }),
-      ShowImage.create({ imageUrl: baseUrl + '/resources/seedImages/4.jpeg', caption: '' })
+    const genres = await Promise.all([
+      Genre.create({name: 'rock', description:'rock and roll!'})
     ])
-    console.log(`seeded ${showImages.length} showImages`)
-    // Wowzers! We can even `await` on the right-hand side of the assignment operator
-    // and store the result that the promise resolves to in a variable! This is nice!
-  
-    console.log('Creating required associations')
-    const showImageAssociations = []
-    let i = 0;
-    for (let show of shows) {
-        showImageAssociations.push(show.addShowImage(ShowImage[i]))
-      i++
-    }
-    await Promise.all(showImageAssociations)
-    console.log(`Associated ${showImageAssociations.length} showImages`)
-  
+
+    const shows = await Promise.all([
+      Show.create({ name: 'TEST 5',  description: 'Amazingly yummy', price: 8.50, availability: 'available', quantity: 45, date: ['9/09/18'], time: 'TEST', imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg', imageCaption: 'hiii'
+    }),
+      // Show.create({ name: 'Jalapeno Burgers', description: 'Amazingly yummy', price: 9.00, availability: 'available', quantity: 45, date: ['9/09/18']}),
+      // Show.create({ name: 'Asian Salad', description: 'Amazingly yummy', price: 10.95, availability: 'available', quantity: 45, date: ['9/09/18']}),
+      // Show.create({ name: 'Grandmas\'s Chicken Noodel Soup', description: 'Amazingly yummy', price: 9.95, availability: 'available', quantity: 18, date: ['9/09/18'] })
+    ]);
+    console.log(`seeded ${genres.length} genres`)
+    console.log(`seeded ${shows.length} shows`)
+    //const baseUrl = 'http://127.0.0.1:8080';
+
+    const associatedGenres =  await Promise.all(associateGenres(genres, shows))
+    console.log(`Made ${associatedGenres.length} associations for genres.`)
+
     console.log(`seeded successfully`)
   }
 
