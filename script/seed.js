@@ -66,17 +66,17 @@ async function seed() {
     const genres = await Promise.all([
       Genre.create({name: 'rock', description:'rock and roll!'})
     ])
-
+    const baseUrl = 'http://127.0.0.1:8080';
     const shows = await Promise.all([
-      Show.create({ name: 'TEST 5',  description: 'Amazingly yummy', price: 8.50, availability: 'available', quantity: 45, date: ['9/09/18'], time: 'TEST', imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg', imageCaption: 'hiii'
+      Show.create({ name: 'Lil Pump @ Terminal 5',  description: 'Gettin Down', price: 55.00, availability: 'available', quantity: 12, date: ['9/09/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/4.png', imageCaption: 'hiii'
     }),
-      // Show.create({ name: 'Jalapeno Burgers', description: 'Amazingly yummy', price: 9.00, availability: 'available', quantity: 45, date: ['9/09/18']}),
-      // Show.create({ name: 'Asian Salad', description: 'Amazingly yummy', price: 10.95, availability: 'available', quantity: 45, date: ['9/09/18']}),
-      // Show.create({ name: 'Grandmas\'s Chicken Noodel Soup', description: 'Amazingly yummy', price: 9.95, availability: 'available', quantity: 18, date: ['9/09/18'] })
+    Show.create({ name: 'Katy Perry @ MSG',  description: 'Killin it', price: 33.00, availability: 'available', quantity: 45, date: ['9/10/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/1.png', imageCaption: 'hiii'
+  }),
+  Show.create({ name: 'Frank Ocean @ Brooklyn Steel',  description: 'Killin it', price: 33.00, availability: 'available', quantity: 45, date: ['9/10/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/3.png', imageCaption: 'hiii'
+})
     ]);
     console.log(`seeded ${genres.length} genres`)
     console.log(`seeded ${shows.length} shows`)
-    //const baseUrl = 'http://127.0.0.1:8080';
 
     const associatedGenres =  await Promise.all(associateGenres(genres, shows))
     console.log(`Made ${associatedGenres.length} associations for genres.`)

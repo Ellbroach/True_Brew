@@ -3,7 +3,9 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
-import {me} from './store'
+import {me, fetchShows} from './store'
+import AllShows from './components/allShows'
+import CreateShow from './components/addShow'
 
 /**
  * COMPONENT
@@ -18,13 +20,15 @@ class Routes extends Component {
 
     return (
       <Switch>
-        {/* Routes placed here are available to all visitors */}
-        <Route path="/login" component={Login} />
+        
+        <Route className="Login" path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/" component={AllShows}/>
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
+            <Route path="/addshow" component={CreateShow} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
@@ -48,6 +52,7 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     loadInitialData() {
+      dispatch(fetchShows())
       dispatch(me())
     }
   }

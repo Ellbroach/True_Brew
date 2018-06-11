@@ -52,9 +52,9 @@ const Show = db.define('show', {
     imageUrl: {
         type: Sequelize.STRING,
         allowNull: false,
-        validate: {
-          isUrl: {msg: 'Invalid URL, try again'}
-        }
+        // validate: {
+        //   isUrl: {msg: 'Invalid URL, try again'}
+        // }
       },
       imageCaption: {
         type: Sequelize.STRING,
