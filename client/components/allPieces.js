@@ -1,27 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom';
-import ShowItem from './showItem';
+import PieceItem from './pieceItem';
 
 
-class AllShows extends React.Component {
+class AllPieces extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            shows: props.shows
+            pieces: props.pieces
         }
     }
     render(){
         return(
            <div>
               {
-                 this.props.shows === undefined ? <div>
+                 this.props.pieces === undefined ? <div>
                      Loading...
                  </div> : 
-                 this.props.shows.map(show => 
-                <ShowItem
-                show={show}
-                key={show.id}
+                 this.props.pieces.map(piece => 
+                <PieceItem
+                piece={piece}
+                key={piece.id}
                 showDeleteButton = {true}
                 />
             )
@@ -31,10 +31,10 @@ class AllShows extends React.Component {
     }
 }
 
-const mapState =( {shows} ) => {
+const mapState =( {pieces} ) => {
    return {
-      shows
+      pieces
    }
 }
 
-export default connect(mapState)(AllShows)
+export default connect(mapState)(AllPieces)

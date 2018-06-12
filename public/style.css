@@ -22,7 +22,20 @@ nav a {
   height: 8rem;
   color: white;
   align-items: center;
-  background-color: #59AAFA;
+  background-color: #58ACFA;
+  padding-left: 3%
+}
+
+.navbar-bottom{
+  width: 100%;
+  float: left;
+  clear: both;
+  margin: 0 0 20px 0;
+  padding: 0 0 2% 0;
+  background: linear-gradient(#58ACFA, #A9D0F5);
+  /* border-bottom: 1px solid; */
+  box-shadow:0 2px 2px;
+  box-shadow: 0 20px 20px -20px;
 }
 
 .navbar h1 {
@@ -30,12 +43,14 @@ nav a {
   font-family: 'Lobster';
   font-size: 3rem;
   padding-top: 0.5rem;
+  
 }
 
 .login {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   flex: 1;
+  /* padding-right: 3% */
 }
 
 .intro {

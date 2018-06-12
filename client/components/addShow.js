@@ -3,9 +3,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom';
-import {addShow} from '../../store'
+import {addPiece} from '../store'
 
-class CreateShow extends React.Component {
+class CreatePiece extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -25,24 +25,24 @@ class CreateShow extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit} >
                     <h3>
-                        Show Name
+                        Piece Name
                         <input
                             onChange={event =>
                                 this.setState({ name: event.target.value })
                             }
                             name="name"
                             required
-                            placeholder="Product Name"
+                            placeholder="Piece Name"
                         />
                     </h3>
                     <h3>
-                        Show Image
+                        Piece Image
                         <input
                             onChange={event =>
                                 this.setState({ imageUrl: event.target.value })
                             }
                             name="imageUrl"
-                            placeholder="Product imageUrl"
+                            placeholder="Piece imageUrl"
                             required
                         />
                     </h3>
@@ -53,17 +53,17 @@ class CreateShow extends React.Component {
 
     handleSubmit(event){
         event.preventDefault()
-        const { addProduct } = this.props
-        addProduct(this.state)
+        const { addPiece } = this.props
+        addPiece(this.state)
     }
 }
 
-const mapState = ({ shows }) => ({ shows })
+const mapState = ({ pieces }) => ({ pieces })
 
 const mapDispatch = (dispatch) => ({
-    addShow: (show) =>
-        dispatch(addShow(show)
+    addPiece: (piece) =>
+        dispatch(addPiece(piece)
     )
 })
 
-export default connect(mapState, mapDispatch)(CreateShow)
+export default connect(mapState, mapDispatch)(CreatePiece)
