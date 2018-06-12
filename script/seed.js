@@ -1,5 +1,5 @@
 const db = require('../server/db')
-const { Show } = require('../server/db/models')
+const { Piece } = require('../server/db/models')
 const {User} = require('../server/db/models')
 const {Genre} = require('../server/db/models')
 const Chance = require('chance')
@@ -8,16 +8,16 @@ const Chance = require('chance')
 const makeUsers = 10;
 const chance = new Chance(1555)
 
-const associateGenres = (genres, shows) => {
-  const showGenreAssociations = []
-  for (let show of shows){
+const associateGenres = (genres, pieces) => {
+  const pieceGenreAssociations = []
+  for (let piece of pieces){
     const randomInt = chance.integer({
       min: 0,
       max: genres.length - 1
     })
-    showGenreAssociations.push(show.setGenres(genres[randomInt]))
+    pieceGenreAssociations.push(piece.setGenres(genres[randomInt]))
   }
-  return showGenreAssociations
+  return pieceGenreAssociations
 }
 
 const createUsers = totalUsers => {
@@ -67,18 +67,18 @@ async function seed() {
       Genre.create({name: 'rock', description:'rock and roll!'})
     ])
     const baseUrl = 'http://127.0.0.1:8080';
-    const shows = await Promise.all([
-      Show.create({ name: 'Lil Pump @ Terminal 5',  description: 'Gettin Down', price: 55.00, availability: 'available', quantity: 12, date: ['9/09/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/4.png', imageCaption: 'hiii'
+    const pieces = await Promise.all([
+      Piece.create({ name: 'Lil Pump @ Terminal 5',  description: 'Gettin Down', price: 55.00, availability: 'available', date: ['9/09/18'], imageUrl: baseUrl + '/concertImages/4.png'
     }),
-    Show.create({ name: 'Katy Perry @ MSG',  description: 'Killin it', price: 33.00, availability: 'available', quantity: 45, date: ['9/10/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/1.png', imageCaption: 'hiii'
-  }),
-  Show.create({ name: 'Frank Ocean @ Brooklyn Steel',  description: 'Killin it', price: 33.00, availability: 'available', quantity: 45, date: ['9/10/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/3.png', imageCaption: 'hiii'
-})
+//     Show.create({ name: 'Katy Perry @ MSG',  description: 'Killin it', price: 33.00, availability: 'available', quantity: 45, date: ['9/10/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/1.png', imageCaption: 'hiii'
+//   }),
+//   Show.create({ name: 'Frank Ocean @ Brooklyn Steel',  description: 'Killin it', price: 33.00, availability: 'available', quantity: 45, date: ['9/10/18'], time: 'TEST', imageUrl: baseUrl + '/concertImages/3.png', imageCaption: 'hiii'
+// })
     ]);
     console.log(`seeded ${genres.length} genres`)
-    console.log(`seeded ${shows.length} shows`)
+    console.log(`seeded ${pieces.length} pieces`)
 
-    const associatedGenres =  await Promise.all(associateGenres(genres, shows))
+    const associatedGenres =  await Promise.all(associateGenres(genres, pieces))
     console.log(`Made ${associatedGenres.length} associations for genres.`)
 
     console.log(`seeded successfully`)

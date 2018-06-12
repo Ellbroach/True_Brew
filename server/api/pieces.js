@@ -1,39 +1,39 @@
 'use strict ';
 const Op = require('sequelize').Op
 const router = require('express').Router()
-const { Show, Genre } = require('../db/models')
+const { Piece, Genre } = require('../db/models')
 
 
 router.get('/', (req, res, next) => {
-  Show.findAll({
+  Piece.findAll({
     include: [
       {
         model: Genre
       }
     ]
   })
-    .then(shows => {
-      res.json(shows)
+    .then(pieces => {
+      res.json(pieces)
     })
     .catch(next)
 })
 
 router.get('/search', (req, res, next) => {
   const searchTerm = req.query.q
-  Show.findAll(
+  Piece.findAll(
     { where: {
        name: {
             [Op.iLike]: `%${searchTerm}%`
           }
       }
     })
-      .then(shows => res.json(shows))
+      .then(pieces => res.json(pieces))
       .catch(next)
 })
 
-router.get('/:showId', (req, res, next) => {
-  const id = req.params.showId
-  Show.findById(id, {
+router.get('/:pieceId', (req, res, next) => {
+  const id = req.params.pieceId
+  Piece.findById(id, {
     include: [
       {
         attributes: ['name'],
@@ -44,27 +44,27 @@ router.get('/:showId', (req, res, next) => {
       }
     ]
   })
-    .then(show => res.json(show))
+    .then(piece => res.json(piece))
     .catch(next)
 })
 
 router.post('/', (req, res, next) => {
   let createAll = [];
-  let showId = null
-  Show.create(req.body)
-    .then(show => {
-      showId = show.id
+  let pieceId = null
+  Piece.create(req.body)
+    .then(piece => {
+      pieceId = piece.id
       console.log('req.body: ', req.body);
       createAll = req.body.genres.map(genre => {
         Genre.findById(genre.id)
           .then(genreInstance => {
-            return show.setGenres(genreInstance)
+            return piece.setGenres(genreInstance)
           })
       })
       return Promise.all(createAll)
     })
     .then(() => {
-      return Show.findById(showId, {
+      return Piece.findById(pieceId, {
         include: [
           {
             attributes: ['name'],
@@ -76,30 +76,30 @@ router.post('/', (req, res, next) => {
         ]
       })}
     )
-    .then(show => res.status(201).json(show))
+    .then(piece => res.status(201).json(piece))
     .catch(next)
 })
 
-router.put('/:showId', (req, res, next) => {
-  const paramsId = req.params.showId
+router.put('/:pieceId', (req, res, next) => {
+  const paramsId = req.params.pieceId
   let updateAll = []
-  Show.update(req.body, { 
+  Piece.update(req.body, { 
       where: { id: paramsId },
       returning: true,
     })
-    .then(([rowsUpdate, [show]]) => {
+    .then(([rowsUpdate, [piece]]) => {
       updateAll = req.body.genres.map(genre => {
         Genre.findAll({
           where: {name: genre.name},
         })
           .then(([genre]) => {
-              return show.setGenres(genre)
+              return piece.setGenres(genre)
           })
       })
       return Promise.all(updateAll)
     })
     .then(() =>
-      Show.findById(paramsId, {
+      Piece.findById(paramsId, {
         include: [
           {
             attributes: ['name'],
@@ -110,16 +110,16 @@ router.put('/:showId', (req, res, next) => {
           }
         ]
       })
-        .then(show => {
-          res.status(200).json(show)
+        .then(piece => {
+          res.status(200).json(piece)
         })
     )
     .catch(next)
 })
 
-router.delete('/:showId', (req, res, next) => {
-  const id = req.params.showId
-  Show.destroy({
+router.delete('/:pieceId', (req, res, next) => {
+  const id = req.params.pieceId
+  Piece.destroy({
     where: { id }
   })
     .then(() => res.sendStatus(204))

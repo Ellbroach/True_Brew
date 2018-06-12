@@ -1,14 +1,14 @@
 const User = require('./user')
-const Show = require('./show')
+const Piece = require('./piece')
 const Genre = require('./genre')
 
 
-Show.belongsToMany(Genre, {through: 'Show_Genre'})
-Genre.belongsToMany(Show, {through: 'Show_Genre'})
+Piece.belongsToMany(Genre, {through: 'Piece_Genre'})
+Genre.belongsToMany(Piece, {through: 'Piece_Genre'})
 
 
 module.exports = {
   User,
-  Show,
+  Piece,
   Genre
 }

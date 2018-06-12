@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 
-const Show = db.define('show', {
+const Piece = db.define('piece', {
     name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -25,10 +25,6 @@ const Show = db.define('show', {
             min: 0
         }
     },
-    time: {
-        type: Sequelize.STRING,
-        allowNull: true
-    },
     date: {
         type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false,
@@ -41,25 +37,10 @@ const Show = db.define('show', {
         allowNull: false,
         defaultValue: 'pending'
     },
-    quantity: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            min: 0
-        }
-    },
     imageUrl: {
         type: Sequelize.STRING,
-        allowNull: false,
-        // validate: {
-        //   isUrl: {msg: 'Invalid URL, try again'}
-        // }
-      },
-      imageCaption: {
-        type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false
       }
 })
 
-module.exports = Show
+module.exports = Piece
