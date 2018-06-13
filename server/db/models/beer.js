@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 
-const Piece = db.define('piece', {
+const Beer = db.define('beer', {
     name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -17,19 +17,16 @@ const Piece = db.define('piece', {
             notEmpty: true
         }
     },
+    abv: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     price: {
         type: Sequelize.DECIMAL(10, 2),  // eslint-disable-line new-cap
         allowNull: false,
         validate: {
             notEmpty: true,
             min: 0
-        }
-    },
-    date: {
-        type: Sequelize.ARRAY(Sequelize.STRING),
-        allowNull: false,
-        validate: {
-            notEmpty: true
         }
     },
     availability: {
@@ -43,4 +40,4 @@ const Piece = db.define('piece', {
       }
 })
 
-module.exports = Piece
+module.exports = Beer

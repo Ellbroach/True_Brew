@@ -4,7 +4,7 @@ const {expect} = require('chai')
 const request = require('supertest')
 const db = require('../db')
 const app = require('../index')
-const Piece = db.model('piece')
+const Beer = db.model('beer')
 const Genre = db.model('genre')
 
 describe('Routes without seed data', () => {
@@ -12,10 +12,10 @@ describe('Routes without seed data', () => {
         return db.sync({force: true})
     })
 
-    describe('`/api/pieces` URI', () => {
+    describe('`/api/beers` URI', () => {
         it('GET responds with an empty array initially', () => {
             return request(app)
-                .get('/api/pieces')
+                .get('/api/beers')
                 .expect(200)
                 .expect('Content-Type', /json/)
                 .then(res => {
@@ -24,21 +24,21 @@ describe('Routes without seed data', () => {
         })
     })
 
-    describe('`/api/pieces` URI', () => {
-        const fakePiece = {
+    describe('`/api/beers` URI', () => {
+        const fakeBeer = {
             name: 'yamiyami',
             price: 10,
-            date: ['test'],
             description: 'what do you think this is',
             availability: 'pending',
+            abv: '6%',
             genres: ['rock'],
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg',
         }
-        const otherPiece = {
+        const otherBeer = {
             name: 'yamiyami',
             price: 10,
-            date: ['test'],
             description: 'what do you think this is',
+            abv: '6%',
             availability: 'pending',
             genres: [{name:'rock', id:1}],
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg',
@@ -46,70 +46,72 @@ describe('Routes without seed data', () => {
 
         beforeEach(() => {
             Genre.create({name: 'rock', description: 'lalala'})
-            return Piece.create( fakePiece )
+            return Beer.create( fakeBeer )
         })
 
-        it('GET responds that a Piece has been added', () => {
+        it('GET responds that a Beer has been added', () => {
             return request(app)
-                .get('/api/pieces')
+                .get('/api/beers')
                 .expect(200)
                 .expect('Content-Type', /json/)
                 .then(res => {
                     expect(res.body).to.be.an('array')
-                    expect(res.body[0].name).to.be.equal(fakePiece.name)
+                    expect(res.body[0].name).to.be.equal(fakeBeer.name)
+                    expect(res.body[0].abv).to.equal(fakeBeer.abv)
             })
         })
 
-        it('POST creates a Piece', () => {
+        it('POST creates a Beer', () => {
             return request(app)
-                .post('/api/pieces')
-                .send(otherPiece)
+                .post('/api/beers')
+                .send(otherBeer)
                 .expect(201)
                 .expect('Content-Type', /json/)
                 .expect(res => {
                     expect(res.body).to.be.an('object')
-                    expect(res.body.name).to.equal(otherPiece.name)
-                    expect(res.body.price).to.equal(otherPiece.price.toFixed(2))
-                    expect(res.body.description).to.equal(otherPiece.description)
-                    expect(res.body.date).to.be.deep.equal(otherPiece.date)
-                    expect(res.body.time).to.equal(otherPiece.time)
-                    expect(res.body.imageUrl).to.equal(otherPiece.imageUrl)
+                    expect(res.body.name).to.equal(otherBeer.name)
+                    expect(res.body.price).to.equal(otherBeer.price.toFixed(2))
+                    expect(res.body.description).to.equal(otherBeer.description)
+                    expect(res.body.abv).to.equal(otherBeer.abv)
+                    expect(res.body.imageUrl).to.equal(otherBeer.imageUrl)
 
             })
         })
     })
 
-    describe('`/api/pieces/:pieceId` URI', () => {
-        const fakePiece = {
+    describe('`/api/beers/:beerId` URI', () => {
+        const fakeBeer = {
             name: 'yamiyami',
             price: 10,
             time: '0:20',
+            abv: '5%',
             date: ['thing'],
             description: 'what do you think this is',
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg'
         }
 
         beforeEach(() => {
-            return Piece.create( fakePiece )
+            return Beer.create( fakeBeer )
         })
 
-        it('GET responds that a specitic piece has been added', () => {
+        it('GET responds that a specific beer has been added', () => {
             return request(app)
-                .get('/api/pieces/1')
+                .get('/api/beers/1')
                 .expect(200)
                 .expect('Content-Type', /json/)
                 .then(res => {
                     expect(res.body).to.be.an('object')
-                    expect(res.body.name).to.equal(fakePiece.name)
-                    expect(res.body.price).to.equal(fakePiece.price.toFixed(2))
-                    expect(res.body.description).to.equal(fakePiece.description)
+                    expect(res.body.name).to.equal(fakeBeer.name)
+                    expect(res.body.abv).to.equal(fakeBeer.abv)
+                    expect(res.body.price).to.equal(fakeBeer.price.toFixed(2))
+                    expect(res.body.description).to.equal(fakeBeer.description)
             })
         })
 
-        describe('PUT & DELETE `/api/pieces/:pieceId`', () => {
+        describe('PUT & DELETE `/api/beers/:beerId`', () => {
 
             beforeEach(() => {
-                return Piece.update({
+                return Beer.update({
                     availability: 'available',
                     imageUrl: 'http://www.amazon.com',
                 }, {
@@ -117,9 +119,9 @@ describe('Routes without seed data', () => {
                 })
             })
 
-            it('DELETE remove a specific piece', () => {
+            it('DELETE remove a specific beer', () => {
                 return request(app)
-                    .delete('/api/pieces/1')
+                    .delete('/api/beers/1')
                     .expect(204)
             })
         })

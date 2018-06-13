@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
-import {me, fetchPieces} from './store'
-import AllPieces from './components/allPieces'
-import CreatePiece from './components/addPiece'
+import {me, fetchBeers} from './store'
+import AllBeers from './components/allBeers'
+import CreateBeer from './components/addBeer'
 
 
 class Routes extends Component {
@@ -21,12 +21,12 @@ class Routes extends Component {
         
         <Route className="Login" path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route exact path="/" component={AllPieces}/>
+        <Route exact path="/" component={AllBeers}/>
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
-            <Route path="/addpiece" component={CreatePiece} />
+            <Route path="/addpiece" component={CreateBeer} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
@@ -50,7 +50,7 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     loadInitialData() {
-      dispatch(fetchPieces())
+      dispatch(fetchBeers())
       dispatch(me())
     }
   }

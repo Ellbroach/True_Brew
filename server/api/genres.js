@@ -1,6 +1,6 @@
 'use strict';
 const router = require('express').Router()
-const { Genre, Piece } = require('../db/models')
+const { Genre, Beer } = require('../db/models')
 
 router.get('/', (req, res, next) => {
     Genre.findAll({
@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
       include: [
         {
           attributes: ['id'],
-          model: Piece,
+          model: Beer,
           through: {
             attributes:  []
           },

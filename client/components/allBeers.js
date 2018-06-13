@@ -1,27 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom';
-import PieceItem from './pieceItem';
+import BeerItem from './beerItem';
 
 
-class AllPieces extends React.Component {
+class AllBeers extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            pieces: props.pieces
+            beers: props.beers
         }
     }
     render(){
         return(
            <div>
               {
-                 this.props.pieces === undefined ? <div>
+                 this.props.beers === undefined ? <div>
                      Loading...
                  </div> : 
-                 this.props.pieces.map(piece => 
-                <PieceItem
-                piece={piece}
-                key={piece.id}
+                 this.props.beers.map(beer => 
+                <BeerItem
+                beer={beer}
+                key={beer.id}
                 showDeleteButton = {true}
                 />
             )
@@ -31,10 +31,10 @@ class AllPieces extends React.Component {
     }
 }
 
-const mapState =( {pieces} ) => {
+const mapState =( {beers} ) => {
    return {
-      pieces
+      beers
    }
 }
 
-export default connect(mapState)(AllPieces)
+export default connect(mapState)(AllBeers)

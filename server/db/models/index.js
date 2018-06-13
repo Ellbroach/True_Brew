@@ -1,14 +1,17 @@
 const User = require('./user')
-const Piece = require('./piece')
+const Beer = require('./beer')
 const Genre = require('./genre')
+const Brewery = require('./brewery')
 
 
-Piece.belongsToMany(Genre, {through: 'Piece_Genre'})
-Genre.belongsToMany(Piece, {through: 'Piece_Genre'})
-
+Beer.belongsToMany(Genre, {through: 'Beer_Genre'})
+Genre.belongsToMany(Beer, {through: 'Beer_Genre'})
+Beer.belongsToMany(Brewery, {through: 'Beer_Brewery'})
+Brewery.belongsToMany(Beer, {through: 'Beer_Brewery'})
 
 module.exports = {
   User,
-  Piece,
-  Genre
+  Beer,
+  Genre,
+  Brewery
 }

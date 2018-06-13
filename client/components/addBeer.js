@@ -3,9 +3,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom';
-import {addPiece} from '../store'
+import {addBeer} from '../store'
 
-class CreatePiece extends React.Component {
+class CreateBeer extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -25,24 +25,24 @@ class CreatePiece extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit} >
                     <h3>
-                        Piece Name
+                        Beer Name
                         <input
                             onChange={event =>
                                 this.setState({ name: event.target.value })
                             }
                             name="name"
                             required
-                            placeholder="Piece Name"
+                            placeholder="Beer Name"
                         />
                     </h3>
                     <h3>
-                        Piece Image
+                        Beer Image
                         <input
                             onChange={event =>
                                 this.setState({ imageUrl: event.target.value })
                             }
                             name="imageUrl"
-                            placeholder="Piece imageUrl"
+                            placeholder="Beer imageUrl"
                             required
                         />
                     </h3>
@@ -53,17 +53,17 @@ class CreatePiece extends React.Component {
 
     handleSubmit(event){
         event.preventDefault()
-        const { addPiece } = this.props
-        addPiece(this.state)
+        const { addBeer } = this.props
+        addBeer(this.state)
     }
 }
 
-const mapState = ({ pieces }) => ({ pieces })
+const mapState = ({ beers }) => ({ beers })
 
 const mapDispatch = (dispatch) => ({
-    addPiece: (piece) =>
-        dispatch(addPiece(piece)
+    addBeer: (beer) =>
+        dispatch(addBeer(beer)
     )
 })
 
-export default connect(mapState, mapDispatch)(CreatePiece)
+export default connect(mapState, mapDispatch)(CreateBeer)

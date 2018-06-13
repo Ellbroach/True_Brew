@@ -1,39 +1,39 @@
 'use strict ';
 const Op = require('sequelize').Op
 const router = require('express').Router()
-const { Piece, Genre } = require('../db/models')
+const { Beer, Genre } = require('../db/models')
 
 
 router.get('/', (req, res, next) => {
-  Piece.findAll({
+  Beer.findAll({
     include: [
       {
         model: Genre
       }
     ]
   })
-    .then(pieces => {
-      res.json(pieces)
+    .then(beers => {
+      res.json(beers)
     })
     .catch(next)
 })
 
 router.get('/search', (req, res, next) => {
   const searchTerm = req.query.q
-  Piece.findAll(
+  Beer.findAll(
     { where: {
        name: {
             [Op.iLike]: `%${searchTerm}%`
           }
       }
     })
-      .then(pieces => res.json(pieces))
+      .then(beers => res.json(beers))
       .catch(next)
 })
 
-router.get('/:pieceId', (req, res, next) => {
-  const id = req.params.pieceId
-  Piece.findById(id, {
+router.get('/:beerId', (req, res, next) => {
+  const id = req.params.beerId
+  Beer.findById(id, {
     include: [
       {
         attributes: ['name'],
@@ -44,27 +44,26 @@ router.get('/:pieceId', (req, res, next) => {
       }
     ]
   })
-    .then(piece => res.json(piece))
+    .then(beer => res.json(beer))
     .catch(next)
 })
 
 router.post('/', (req, res, next) => {
   let createAll = [];
-  let pieceId = null
-  Piece.create(req.body)
-    .then(piece => {
-      pieceId = piece.id
-      console.log('req.body: ', req.body);
+  let beerId = null
+  Beer.create(req.body)
+    .then(beer => {
+      beerId = beer.id
       createAll = req.body.genres.map(genre => {
         Genre.findById(genre.id)
           .then(genreInstance => {
-            return piece.setGenres(genreInstance)
+            return beer.setGenres(genreInstance)
           })
       })
       return Promise.all(createAll)
     })
     .then(() => {
-      return Piece.findById(pieceId, {
+      return Beer.findById(beerId, {
         include: [
           {
             attributes: ['name'],
@@ -76,30 +75,30 @@ router.post('/', (req, res, next) => {
         ]
       })}
     )
-    .then(piece => res.status(201).json(piece))
+    .then(beer => res.status(201).json(beer))
     .catch(next)
 })
 
-router.put('/:pieceId', (req, res, next) => {
-  const paramsId = req.params.pieceId
+router.put('/:beerId', (req, res, next) => {
+  const paramsId = req.params.beerId
   let updateAll = []
-  Piece.update(req.body, { 
+  Beer.update(req.body, { 
       where: { id: paramsId },
       returning: true,
     })
-    .then(([rowsUpdate, [piece]]) => {
+    .then(([rowsUpdate, [beer]]) => {
       updateAll = req.body.genres.map(genre => {
         Genre.findAll({
           where: {name: genre.name},
         })
           .then(([genre]) => {
-              return piece.setGenres(genre)
+              return beer.setGenres(genre)
           })
       })
       return Promise.all(updateAll)
     })
     .then(() =>
-      Piece.findById(paramsId, {
+      Beer.findById(paramsId, {
         include: [
           {
             attributes: ['name'],
@@ -110,16 +109,16 @@ router.put('/:pieceId', (req, res, next) => {
           }
         ]
       })
-        .then(piece => {
-          res.status(200).json(piece)
+        .then(beer => {
+          res.status(200).json(beer)
         })
     )
     .catch(next)
 })
 
-router.delete('/:pieceId', (req, res, next) => {
-  const id = req.params.pieceId
-  Piece.destroy({
+router.delete('/:beerId', (req, res, next) => {
+  const id = req.params.beerId
+  Beer.destroy({
     where: { id }
   })
     .then(() => res.sendStatus(204))
