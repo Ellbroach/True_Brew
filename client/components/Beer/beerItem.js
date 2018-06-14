@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import {removeBeer} from '../store'
+import {removeBeer} from '../../store'
 
 
 class BeerItem extends React.Component {

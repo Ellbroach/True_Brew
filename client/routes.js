@@ -1,11 +1,14 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch} from 'react-router-dom'
-import PropTypes from 'prop-types'
-import {Login, Signup, UserHome} from './components'
-import {me, fetchBeers} from './store'
-import AllBeers from './components/allBeers'
-import CreateBeer from './components/addBeer'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {withRouter, Route, Switch} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {Login, Signup, UserHome} from './components';
+import {me, fetchBeers, fetchBreweries} from './store';
+import AllBeers from './components/Beer/allBeers';
+import CreateBeer from './components/Beer/addBeer';
+import CreateBrewery from './components/Brewery/addBrewery';
+import allBreweries from './components/Brewery/allBreweries';
+import SingleBrewery from './components/Brewery/singleBrewery';
 
 
 class Routes extends Component {
@@ -21,12 +24,14 @@ class Routes extends Component {
         
         <Route className="Login" path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route exact path="/" component={AllBeers}/>
+        <Route exact path="/" component={allBreweries}/>
+        <Route exact path="/breweries/:breweryId" component={SingleBrewery} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
-            <Route path="/addpiece" component={CreateBeer} />
+            <Route path="/addbeer" component={CreateBeer} />
+            <Route path="/addbrewery" component={CreateBrewery}/>
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
@@ -51,6 +56,7 @@ const mapDispatch = dispatch => {
   return {
     loadInitialData() {
       dispatch(fetchBeers())
+      dispatch(fetchBreweries())
       dispatch(me())
     }
   }

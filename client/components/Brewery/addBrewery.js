@@ -3,46 +3,60 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom';
-import {addBeer} from '../store'
+import {addBrewery} from '../../store'
 
-class CreateBeer extends React.Component {
+class CreateBrewery extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             name: '',
             description: '',
+            imageUrl: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
+    
+    handleSubmit(event){
+        event.preventDefault()
+        const { addBrewery } = this.props
+        addBrewery(this.state)
+    }
+
 
     render(){
-        const availability = [
-            'pending',
-            'available',
-            'out of stock'
-        ]
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
                     <h3>
-                        Beer Name
+                        Brewery Name
                         <input
                             onChange={event =>
                                 this.setState({ name: event.target.value })
                             }
-                            name="name"
+                            name= "name"
                             required
-                            placeholder="Beer Name"
+                            placeholder= "Brewery Name"
                         />
                     </h3>
                     <h3>
-                        Beer Image
+                        Description
+                        <input
+                            onChange={event => 
+                            this.setState({description: event.target.value})
+                        }
+                        name= "description"
+                        required
+                        placeholder= "Description"
+                        />
+                    </h3>
+                    <h3>
+                        Brewery Image
                         <input
                             onChange={event =>
                                 this.setState({ imageUrl: event.target.value })
                             }
                             name="imageUrl"
-                            placeholder="Beer imageUrl"
+                            placeholder="Brewery imageUrl"
                             required
                         />
                     </h3>
@@ -51,19 +65,14 @@ class CreateBeer extends React.Component {
         )
     }
 
-    handleSubmit(event){
-        event.preventDefault()
-        const { addBeer } = this.props
-        addBeer(this.state)
-    }
 }
 
-const mapState = ({ beers }) => ({ beers })
+const mapState = ({ breweries }) => ({ breweries })
 
 const mapDispatch = (dispatch) => ({
-    addBeer: (beer) =>
-        dispatch(addBeer(beer)
+    addBrewery: (brewery) =>
+        dispatch(addBrewery(brewery)
     )
 })
 
-export default connect(mapState, mapDispatch)(CreateBeer)
+export default connect(mapState, mapDispatch)(CreateBrewery)
