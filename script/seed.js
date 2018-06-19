@@ -18,9 +18,20 @@ const chance = new Chance(1555)
 //   return beerGenreAssociations
 // }
 
+// const associateBeer = (breweries, beers) => {
+//   const breweryBeerAssociations = []
+//   breweryBeerAssociations.push(beers[0].setBreweries(breweries[0]))
+
+//   return breweryBeerAssociations
+// }
+
+
 const associateBeer = (breweries, beers) => {
   const breweryBeerAssociations = []
-  breweryBeerAssociations.push(beers[0].setBrewerys(breweries[0]))
+  breweryBeerAssociations.push(
+    beers.forEach(beer => beer.setBreweries(breweries.find(
+      brewery => brewery.name === beer.brewery
+    ))))
 
   return breweryBeerAssociations
 }
@@ -77,7 +88,7 @@ async function seed() {
     const baseUrl = 'http://127.0.0.1:8080';
     const breweries = await Promise.all([
       Brewery.create({
-        name: `\n Allagash Brewing Company`, owner: 'Rob Todd (Founder)', description: 'Allagash Brewing Company is dedicated to crafting the best Belgian-inspired beers in the world. Best known for our flagship beer, Allagash White, we also enjoy aging beer in oak barrels (beginning with the launch of Curieux in 2004) and spontaneously fermented beers (beginning with our traditional Coolship in 2007).',
+        name: `Allagash Brewing Company`, owner: 'Rob Todd (Founder)', description: 'Allagash Brewing Company is dedicated to crafting the best Belgian-inspired beers in the world. Best known for our flagship beer, Allagash White, we also enjoy aging beer in oak barrels (beginning with the launch of Curieux in 2004) and spontaneously fermented beers (beginning with our traditional Coolship in 2007).',
         city: 'Portland', state: 'Maine', imageUrl: baseUrl + '/companyImages/Allagash.png'
       }),
       Brewery.create({
@@ -118,13 +129,22 @@ async function seed() {
       Genre.create({name: 'IPA', description:'Hoppy and smooth. Nothing crazy with these ones.'})
     ])
     const beers = await Promise.all([
-      Beer.create({ name: '90 minute IPA',  description: 'Gettin Down', price: 3.00, availability: 'available', imageUrl: baseUrl + '/concertImages/4.png', abv: '9.2%'
+    Beer.create({ name: '90 minute IPA',  description: 'Gettin Down', price: 3.00, availability: 'available', imageUrl: baseUrl + '/concertImages/4.png', abv: '9.2%', brewery: 'Dogfish Head Brewery'
+    }),
+    Beer.create({ name: 'White',  description: 'Our interpretation of a Belgian-style wheat beer is brewed with oats, malted wheat, and unmalted raw wheat for a hazy, “white” appearance. Spiced with our own special blend of coriander and Curaçao orange peel, White upholds the Belgian tradition of beers that are both complex and refreshing. Though it’s brewed in Maine, the recipe sticks to its Belgian roots. We’ve worked hard to make sure that the White in your hand tastes the same as it did back in 1995, when Rob Tod brewed the first batch.',
+    price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Allagash/White.png', abv: '4.5%', brewery: 'Allagash Brewing Company'
+    }),
+    Beer.create({ name: 'White',  description: 'Our interpretation of a Belgian-style wheat beer is brewed with oats, malted wheat, and unmalted raw wheat for a hazy, “white” appearance. Spiced with our own special blend of coriander and Curaçao orange peel, White upholds the Belgian tradition of beers that are both complex and refreshing. Though it’s brewed in Maine, the recipe sticks to its Belgian roots. We’ve worked hard to make sure that the White in your hand tastes the same as it did back in 1995, when Rob Tod brewed the first batch.',
+    price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Allagash/HTB.png', abv: '4.5%', brewery: 'Allagash Brewing Company'
     })
     ]);
+
+
     console.log(`seeded ${breweries.length} breweries`)
     console.log(`seeded ${genres.length} genres`)
     console.log(`seeded ${beers.length} beers`)
-
+    const associatedBeers = await Promise.all(associateBeer(breweries, beers))
+    console.log(`Made ${associatedBeers.length} associations for beers.`)
     const associatedGenres =  await Promise.all(associateFlavors(genres, beers))
     console.log(`Made ${associatedGenres.length} associations for genres.`)
 

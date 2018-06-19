@@ -149,3 +149,8 @@ form div {
   margin-right: auto;
   min-height: 60%;
 }
+
+.beer-image img{
+  width: 15%;
+  height: 15%;
+}

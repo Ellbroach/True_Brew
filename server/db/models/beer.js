@@ -37,7 +37,11 @@ const Beer = db.define('beer', {
     imageUrl: {
         type: Sequelize.STRING,
         allowNull: false
-      }
+      },
+    brewery: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
 })
 
 module.exports = Beer

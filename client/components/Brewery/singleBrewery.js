@@ -7,27 +7,45 @@ import store, { fetchBrewery } from '../../store'
 class SingleBrewery extends React.Component{
     constructor(props){
         super(props)
-
     }
 
     componentDidMount(){
         this.props.fetchBrewery()
     }
     render(){
-        const {brewery} = this.props
-        console.log('BREWERY: ', brewery)
+        const {brewery, beers} = this.props
+        const foundBeers = beers === undefined ? null: beers.filter(findBeers => findBeers.brewery === brewery.name).map(beer => beer.imageUrl)
         return(
             <div>
-                <h1>{`${brewery.name}`}</h1>
-                <h2>{`${brewery.description}`}</h2>
+                {
+                    brewery.beers ? 
+                    <div>
+                    <h1>{`${brewery.name}`}</h1>
+                    <h2>{`${brewery.description}`}</h2>
+                    {brewery.beers.map(beer => (
+                        beer.name
+                    ))}
+                    <div className = 'beer-image'>
+                    { foundBeers === undefined ? null :
+                    foundBeers.map(url => 
+                     <img key= {url} src= {url}/>
+                    )
+                    }
+                    </div>
+                    </div>
+                    : (                
+                    <div>Loading....</div>
+                    )
+                }
             </div>
         )
     }
 }
 
-const mapState = ({ user, brewery }) => {
+const mapState = ({ user, brewery, beers }) => {
     return {
         brewery,
+        beers,
         isAdmin: !user ? null : user.role,
     }
 }
