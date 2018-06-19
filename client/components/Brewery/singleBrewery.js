@@ -15,9 +15,11 @@ class SingleBrewery extends React.Component{
     }
     render(){
         const {brewery} = this.props
+        console.log('BREWERY: ', brewery)
         return(
             <div>
                 <h1>{`${brewery.name}`}</h1>
+                <h2>{`${brewery.description}`}</h2>
             </div>
         )
     }

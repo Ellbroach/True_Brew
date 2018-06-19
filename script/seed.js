@@ -6,16 +6,23 @@ const Chance = require('chance')
 const makeUsers = 10;
 const chance = new Chance(1555)
 
-const associateGenres = (genres, beers) => {
-  const beerGenreAssociations = []
-  for (let beer of beers){
-    const randomInt = chance.integer({
-      min: 0,
-      max: genres.length - 1
-    })
-    beerGenreAssociations.push(beer.setGenres(genres[randomInt]))
-  }
-  return beerGenreAssociations
+// const associateGenres = (genres, beers) => {
+//   const beerGenreAssociations = []
+//   for (let beer of beers){
+//     const randomInt = chance.integer({
+//       min: 0,
+//       max: genres.length - 1
+//     })
+//     beerGenreAssociations.push(beer.setGenres(genres[randomInt]))
+//   }
+//   return beerGenreAssociations
+// }
+
+const associateBeer = (breweries, beers) => {
+  const breweryBeerAssociations = []
+  breweryBeerAssociations.push(beers[0].setBrewerys(breweries[0]))
+
+  return breweryBeerAssociations
 }
 
 const associateFlavors = (genres, beers) => {

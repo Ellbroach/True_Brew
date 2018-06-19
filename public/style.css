@@ -44,16 +44,29 @@ nav a {
   margin: auto;
 }
 
-.intro-text {
+.intro-text h1 {
   display: block;
-  margin: auto;
+  margin-left: 15%;
   text-align: center;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 6%;
   background-color: #7c795d;
   width: 25vw;
-  color: white; font-size: 38px; font-family: 'Signika', sans-serif;
+  color: white; font-size: 64px; font-family: 'Signika', sans-serif;
   border-radius: 15px;
+  padding: .5%;
+}
+
+.intro-text h2 {
+  display: block;
+  margin-left: 17%;
+  text-align: center;
+  margin-bottom: 3px;
+  letter-spacing: 2px;
+  background-color: #7c795d;
+  width: 16vw;
+  color: white; font-size: 32px; font-family: 'Signika', sans-serif;
+  border-radius: 15px;
+  padding: 3%;
 }
 
 
