@@ -19,12 +19,20 @@ class SingleBrewery extends React.Component{
             <div>
                 {
                     brewery.beers ? 
-                    <div>
+                    <div className = 'single-brewery'>
                     <h1>{`${brewery.name}`}</h1>
+                    <div className='single-brew-details'>
+                    <div className='single-brew-description'>
                     <h2>{`${brewery.description}`}</h2>
-                    {brewery.beers.map(beer => (
+                    </div>
+                    <div className='single-brew-image'>
+                    <img src={brewery.alternateImage}/>
+                    <h2>{brewery.owner}</h2>
+                    </div>
+                    </div>
+                    {/* {brewery.beers.map(beer => (
                         beer.name
-                    ))}
+                    ))} */}
                     <div className = 'beer-image'>
                     { foundBeers === undefined ? null :
                     foundBeers.map(url => 

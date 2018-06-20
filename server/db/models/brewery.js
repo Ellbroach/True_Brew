@@ -34,6 +34,10 @@ const Brewery = db.define('brewery', {
     imageUrl: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    alternateImage: {
+        type: Sequelize.STRING,
+        allowNull: true
     }
 })
 

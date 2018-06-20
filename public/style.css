@@ -154,3 +154,67 @@ form div {
   width: 15%;
   height: 15%;
 }
+
+.single-brewery h1{
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 3%;
+  background-color: #7c795d;
+  width: 25vw;
+  color: white; font-size: 80px; font-family: 'Signika', sans-serif;
+  border-radius: 15px;
+  padding: .5%;
+}
+
+.single-brew-details {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 5%;
+  align-content: space-between;
+  justify-content: space-around;
+}
+
+.single-brew-description {
+  display: flex;
+  flex: 1;
+  background-color: #7c795d;
+  margin-right: 2%;
+  padding: 1.5%;
+  letter-spacing: 1.5px;
+  line-height: 3.5vh;
+  background-color: #7c795d;
+  width: 25vw;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.single-brew-description h2 {
+  margin-left: 15%;
+  margin-right: 15%;
+  color: white; font-size: 40px; font-family: 'Signika', sans-serif;
+}
+
+.single-brew-image {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #7c795d;
+  padding: 1.5%;
+  align-content: space-between;
+  justify-content: space-around;
+  margin-left: 2%;
+  border-radius: 15px;
+}
+
+.single-brew-image h2{
+  text-align: center;
+}
+
+.single-brew-image img{
+  display: block;
+  margin: 0 auto;
+}
+

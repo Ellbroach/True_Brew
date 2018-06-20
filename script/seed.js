@@ -89,7 +89,7 @@ async function seed() {
     const breweries = await Promise.all([
       Brewery.create({
         name: `Allagash Brewing Company`, owner: 'Rob Todd (Founder)', description: 'Allagash Brewing Company is dedicated to crafting the best Belgian-inspired beers in the world. Best known for our flagship beer, Allagash White, we also enjoy aging beer in oak barrels (beginning with the launch of Curieux in 2004) and spontaneously fermented beers (beginning with our traditional Coolship in 2007).',
-        city: 'Portland', state: 'Maine', imageUrl: baseUrl + '/companyImages/Allagash.png'
+        city: 'Portland', state: 'Maine', imageUrl: baseUrl + '/companyImages/Allagash.png', alternateImage: baseUrl + '/companyImages/Allagash-Founder.png'
       }),
       Brewery.create({
         name: 'Brooklyn Brewery', owner: 'Steve Hindy (50%, founder) and Eric/Robin Ottaway (50%, early family investors)', description: 'Like our namesake borough, The Brooklyn Brewery is made up of a rich collection of characters from all over the world. In our Williamsburg home, these characters are dedicated to brewing and selling great beer and enriching the communities we serve. Together, these Brooklynites have assembled the skills needed to transform a home brewing hobby into an independent brewery with a brand that has become an international beacon for good beer.  Starting with our flagship Brooklyn Lager, the portfolio of Brooklyn Brewery has grown to a wide-ranging collection of beers, always keeping an eye to traditional brewing techniques, even as Brewmaster Garrett Oliver and his team seek to push the boundaries of beer.',
