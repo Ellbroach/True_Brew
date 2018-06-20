@@ -14,7 +14,9 @@ class SingleBrewery extends React.Component{
     }
     render(){
         const {brewery, beers} = this.props
-        const foundBeers = beers === undefined ? null: beers.filter(findBeers => findBeers.brewery === brewery.name).map(beer => beer.imageUrl)
+        const foundBeers = beers === undefined ? null: beers.filter(findBeers => findBeers.brewery === brewery.name)
+        console.log('FOUND BEERS: ', foundBeers)
+        const foundBeerUrls = foundBeers.map(beer => beer.imageUrl)
         return(
             <div>
                 {
@@ -26,17 +28,27 @@ class SingleBrewery extends React.Component{
                     <h2>{`${brewery.description}`}</h2>
                     </div>
                     <div className='single-brew-image'>
-                    <img src={brewery.alternateImage}/>
+                    <img src={brewery.ownerImage}/>
                     <h2>{brewery.owner}</h2>
                     </div>
                     </div>
                     {/* {brewery.beers.map(beer => (
                         beer.name
                     ))} */}
-                    <div className = 'beer-image'>
+                    <div className = 'beer-image-container'>
+                    {/* { foundBeerUrls === undefined ? null :
+                    foundBeerUrls.map(url => 
+                    <div key= {url} className='beer-image'>
+                     <img src= {url}/>
+                     </div>
+                    )
+                    } */}
                     { foundBeers === undefined ? null :
-                    foundBeers.map(url => 
-                     <img key= {url} src= {url}/>
+                    foundBeers.map(beer => 
+                    <div key= {beer.imageUrl} className='beer-image'>
+                     <img src= {beer.imageUrl}/>
+                     <h2>{beer.name}</h2>
+                     </div>
                     )
                     }
                     </div>

@@ -96,11 +96,48 @@ nav a {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   flex: 1;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 74vw;
+  flex-wrap: wrap;
   /* padding-right: 3% */
 }
 
+.login-box{
+  padding-top: .5px;
+  padding-right: 2px;
+  padding-bottom: .5px;
+  padding-left: 2px;
+  background-color: #ccdcc1;
+  box-shadow: 0 0 2pt 1.5pt black;
+  border-radius: 10px;
+  float: left;
+  margin: 12px;
+}
+
+.signup-box {
+  padding-top: .5px;
+  padding-right: 2px;
+  padding-bottom: .5px;
+  padding-left: 2px;
+  background-color: #ccdcc1;
+  box-shadow: 0 0 2pt 1.5pt black;
+  border-radius: 10px;
+  float: right;
+  margin: 5px;
+  margin-top: 12px;
+}
+
+.login-box:hover {
+  box-shadow: 0 0 3pt 2pt black;
+}
+
+.signup-box:hover{
+  box-shadow: 0 0 3pt 2pt black;
+}
+
 .intro {
-  flex: 1
+  flex: 1;
 }
 
 form div {
@@ -132,13 +169,12 @@ form div {
   width: 300px;
   height: 330px;
   padding: 40px;
-  border: 3px solid;
   border-radius: 35px;
+  box-shadow: 0 0 4pt 3pt darkgoldenrod;
 }
 
-.brewery-name {
-  text-align: center;
-  vertical-align: text-bottom
+.brewery-item:hover {
+  box-shadow: 0 0 7pt 6pt darkgoldenrod;
 }
 
 .brewery-item img {
@@ -150,11 +186,58 @@ form div {
   min-height: 60%;
 }
 
-.beer-image img{
-  width: 15%;
-  height: 15%;
+.brewery-name {
+  text-align: center;
+  vertical-align: text-bottom
 }
 
+.beer-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 60%;
+  margin: 0 auto;
+  margin-top: 5%;
+  align-content: space-between;
+  justify-content: space-around;
+  font-family: sans-serif;
+}
+
+.beer-image {
+  flex-direction: column;
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 40px;
+  width: 380px;
+  height: 610px;
+  padding: 40px;
+  border-radius: 35px;
+  box-shadow: 0 0 3pt 2pt darkgoldenrod;;
+  text-align: center;
+}
+
+.beer-image:hover{
+  box-shadow: 0 0 7pt 6pt darkgoldenrod;
+}
+
+.beer-image img{
+  max-height: 90%;
+  max-width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 60%;
+}
+
+.beer-image h2{
+  color: black;
+  font-family: 'Lobster';
+  font-size: 28px;
+  font-size: 3rem;
+}
+
+.single-brewery{
+  margin-top: 5%;
+}
 .single-brewery h1{
   display: block;
   margin: auto;
@@ -162,9 +245,12 @@ form div {
   margin-top: 3%;
   background-color: #7c795d;
   width: 25vw;
-  color: white; font-size: 80px; font-family: 'Signika', sans-serif;
+  color: white; 
+  font-size: 80px; 
+  font-family: 'Signika', sans-serif;
   border-radius: 15px;
   padding: .5%;
+  box-shadow: 0 0 3pt 2pt gray
 }
 
 .single-brew-details {
@@ -172,7 +258,7 @@ form div {
   flex-wrap: wrap;
   max-width: 90%;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 2%;
   align-content: space-between;
   justify-content: space-around;
 }
@@ -180,7 +266,6 @@ form div {
 .single-brew-description {
   display: flex;
   flex: 1;
-  background-color: #7c795d;
   margin-right: 2%;
   padding: 1.5%;
   letter-spacing: 1.5px;
@@ -189,12 +274,15 @@ form div {
   width: 25vw;
   border-radius: 15px;
   text-align: center;
+  box-shadow: 0 0 3pt 2pt lightgray
 }
 
 .single-brew-description h2 {
   margin-left: 15%;
   margin-right: 15%;
-  color: white; font-size: 40px; font-family: 'Signika', sans-serif;
+  color: white;
+  font-size: 40px;
+  font-family: 'Signika', sans-serif;
 }
 
 .single-brew-image {
@@ -207,14 +295,20 @@ form div {
   justify-content: space-around;
   margin-left: 2%;
   border-radius: 15px;
+  box-shadow: 0 0 3pt 2pt lightgray
 }
 
 .single-brew-image h2{
   text-align: center;
+  color: white;
+  font-size: 32px;
+  font-family: 'Signika', sans-serif;
 }
 
 .single-brew-image img{
   display: block;
   margin: 0 auto;
+  box-shadow: 0 0 5pt 3pt gray;
+  border-radius: 25px;
 }
 

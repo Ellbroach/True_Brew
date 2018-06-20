@@ -35,7 +35,7 @@ const Brewery = db.define('brewery', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    alternateImage: {
+    ownerImage: {
         type: Sequelize.STRING,
         allowNull: true
     }
