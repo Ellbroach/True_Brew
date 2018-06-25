@@ -8,15 +8,17 @@ const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
   <div className="navbar">
   <Link to="/">
-  <div className="intro">
-    <h1>True Brew</h1>
+  <div className="logo">
+    <img src='http://127.0.0.1:8080/websiteImages/True-brew-logo.png'/>
     </div>
     </Link>
     <div className='login'>
     <nav>
       {isLoggedIn ? (
-        <div>
-          <Link to="/home">Home</Link>
+        <div className='cart-logout'>
+        <Link to='/checkout'>
+          <img src='http://127.0.0.1:8080/websiteImages/Cart.png'/>
+        </Link>
           <a href="#" onClick={handleClick}>
             Logout
           </a>

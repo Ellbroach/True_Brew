@@ -9,6 +9,8 @@ import CreateBeer from './components/Beer/addBeer';
 import CreateBrewery from './components/Brewery/addBrewery';
 import allBreweries from './components/Brewery/allBreweries';
 import SingleBrewery from './components/Brewery/singleBrewery';
+import BeerReview from './components/Beer/beerReview'
+import Cart from './components/cart'
 
 
 class Routes extends Component {
@@ -26,12 +28,14 @@ class Routes extends Component {
         <Route path="/signup" component={Signup} />
         <Route exact path="/" component={allBreweries}/>
         <Route exact path="/breweries/:breweryId" component={SingleBrewery} />
+        <Route path="/beers/:beerId/reviews" component={BeerReview} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
             <Route path="/addbeer" component={CreateBeer} />
             <Route path="/addbrewery" component={CreateBrewery}/>
+            <Route path="/cart" component={Cart}/>
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}

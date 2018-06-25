@@ -14,6 +14,8 @@ class BeerItem extends React.Component {
         const {removeBeer, beer} = this.props
         removeBeer(beer.id)
     }
+
+    
         render(){
             const beer = this.props.beer
             return(

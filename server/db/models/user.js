@@ -10,37 +10,56 @@ const User = db.define('user', {
   },
   password: {
     type: Sequelize.STRING,
-    // Making `.password` act like a func hides it when serializing to JSON.
-    // This is a hack to get around Sequelize's lack of a "private" option.
     get() {
       return () => this.getDataValue('password')
     }
   },
   salt: {
     type: Sequelize.STRING,
-    // Making `.salt` act like a function hides it when serializing to JSON.
-    // This is a hack to get around Sequelize's lack of a "private" option.
     get() {
       return () => this.getDataValue('salt')
     }
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  address: {
+    type: Sequelize.TEXT,
+    validate: {
+      notEmpty: true,
+    }
+  },
+  city: {
+    type: Sequelize.TEXT,
+    validate: {
+      notEmpty: true,
+    }
+  },
+  state: {
+    type: Sequelize.TEXT,
+    validate: {
+      notEmpty: true,
+    }
+  },
+  zip: {
+    type: Sequelize.TEXT,
+    validate: {
+      notEmpty: true,
+    }
+  },
+  role: {
+    type: Sequelize.ENUM('user', 'admin'), // eslint-disable-line new-cap
+    defaultValue: 'user',
+    allowNull: false
   }
 })
 
 module.exports = User
 
-/**
- * instanceMethods
- */
 User.prototype.correctPassword = function(candidatePwd) {
   return User.encryptPassword(candidatePwd, this.salt()) === this.password()
 }
 
-/**
- * classMethods
- */
 User.generateSalt = function() {
   return crypto.randomBytes(16).toString('base64')
 }
@@ -53,9 +72,6 @@ User.encryptPassword = function(plainText, salt) {
     .digest('hex')
 }
 
-/**
- * hooks
- */
 const setSaltAndPassword = user => {
   if (user.changed('password')) {
     user.salt = User.generateSalt()

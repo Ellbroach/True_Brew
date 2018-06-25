@@ -6,6 +6,8 @@ body {
 
 .beer-main {
   background-color: cornsilk;
+  height: 100%;
+  min-height: 100vh;
 }
 
 a {
@@ -30,12 +32,64 @@ nav a {
   padding-left: 3%;
 }
 
+.cart-logout {
+  display: flex;
+}
+
+.cart-logout img {
+  width: 65px;
+  height: 65px;
+  position: relative;
+  top: 10px;
+}
+
+.cart {
+  text-align: center;
+  width: 60vw;
+  margin: auto;
+  margin-top: 4.5%;
+  box-shadow: 0 0 3pt 2pt gray;
+}
+
+.cart td {
+  padding: 0.5rem
+}
+
+.cart .cart-name-col {
+  width: 25rem;
+}
+
+.cart thead {
+  background-color: lightgrey;
+  border: none;
+}
+
+.cart tfoot {
+  font-weight: bold;
+}
+
+.cart-line-price, .cart-line-quantity, .cart-line-total {
+  text-align: right;
+}
+
+.cart .car-price-col, .car-total-col {
+  width: 10vw;
+}
+
+.add-to-cart {
+  display: none;
+}
+
+.add-to-cart:active  {
+  display: contents;
+}
+
 .intro-background {
   padding-top: 2%;
   height: 97vh;
   width: 100%;
   background-image: url('http://127.0.0.1:8080/websiteImages/backgroundImage.png');
-  box-shadow: 0px 0px 8px 8px #d78258;
+  box-shadow: 0px 0px 20px 15px #d78258;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -136,8 +190,12 @@ nav a {
   box-shadow: 0 0 3pt 2pt black;
 }
 
-.intro {
+.logo {
   flex: 1;
+}
+
+.logo img {
+  width: 190%;
 }
 
 form div {
@@ -155,17 +213,56 @@ form div {
   flex-wrap: wrap;
   max-width: 60%;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 3%;
   align-content: space-between;
   justify-content: space-around;
   font-family: sans-serif;
+}
+
+.show-brew {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 32px;
+}
+
+.toggle-brew button {
+  margin: auto;
+  margin-bottom: 1%;
+}
+
+.show-brew button {
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: block;
+  margin: 20px auto;
+  width: 280px;
+  height: 80px;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 28px;
+}
+
+.show-brew button {
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+.show-brew button:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
 }
 
 .brewery-item {
   flex-direction: column;
   background-color: #fff;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   width: 300px;
   height: 330px;
   padding: 40px;
@@ -174,7 +271,7 @@ form div {
 }
 
 .brewery-item:hover {
-  box-shadow: 0 0 7pt 6pt darkgoldenrod;
+  box-shadow: 0 0pt 8pt 7pt darkgoldenrod;
 }
 
 .brewery-item img {
@@ -208,7 +305,7 @@ form div {
   color: #000;
   margin-bottom: 40px;
   width: 380px;
-  height: 610px;
+  height: 760px;
   padding: 40px;
   border-radius: 35px;
   box-shadow: 0 0 3pt 2pt darkgoldenrod;;
@@ -220,8 +317,8 @@ form div {
 }
 
 .beer-image img{
-  max-height: 90%;
-  max-width: 90%;
+  max-height: 77%;
+  max-width: 77%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -231,9 +328,9 @@ form div {
 .beer-image h2{
   color: black;
   font-family: 'Lobster';
-  font-size: 28px;
   font-size: 3rem;
 }
+
 
 .single-brewery{
   margin-top: 5%;
@@ -269,7 +366,7 @@ form div {
   margin-right: 2%;
   padding: 1.5%;
   letter-spacing: 1.5px;
-  line-height: 3.5vh;
+  line-height: 55px;
   background-color: #7c795d;
   width: 25vw;
   border-radius: 15px;
@@ -312,3 +409,92 @@ form div {
   border-radius: 25px;
 }
 
+.popup-body h1 {
+  margin: 0;
+  padding: 0;
+}
+.popup-body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.popup {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+  z-index: 5;
+}
+.popup_inner {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 5%;
+  bottom: 5%;
+  margin: auto;
+  background: antiquewhite;
+}
+
+.popup_inner h1 {
+  margin-top: 3%;
+  font-size: 50px;
+  color: black;
+  background-color: antiquewhite;
+  width: 100%;
+  box-shadow: 0 0 0 0;
+}
+
+.popup_inner h3 {
+  font-size: 30px;
+  margin: 35px;
+}
+
+.popup-body button {
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  right: 40px;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin-bottom: 15px;
+  width: 460px;
+  /* border-radius: 10px; */
+}
+
+
+
+.popup-body button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+
+.popup-body button:before, .popup-body button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.popup-body button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.popup-body button:hover:before, .popup-body button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
