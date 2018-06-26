@@ -331,6 +331,80 @@ form div {
   font-size: 3rem;
 }
 
+.single-beer {
+  margin-top: 5%;
+}
+
+.single-beer h1{
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 3%;
+  background-color: #4F0D04;
+  width: 25vw;
+  color: white; 
+  font-size: 80px; 
+  font-family: 'Signika', sans-serif;
+  border-radius: 15px;
+  padding: .5%;
+  box-shadow: 0 0 3pt 2pt gray
+}
+
+
+.single-beer-description {
+  display: flex;
+  padding: 1.5%;
+  letter-spacing: 1.5px;
+  line-height: 55px;
+  background-color: #4F0D04;
+  color: white;
+  width: 55vw;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 3pt 2pt lightgray
+}
+
+.single-beer-description h2 {
+  margin-left: 5%;
+  margin-right: 5%;
+  color: white;
+  font-size: 34px;
+  font-family: 'Signika', sans-serif;
+}
+
+.single-beer-details{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 2%;
+  align-content: space-between;
+  justify-content: space-around;
+}
+
+.single-beer-image {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  background-color: white;
+  padding: 1.5%;
+  align-content: space-between;
+  justify-content: space-around;
+  border-radius: 25px;
+  box-shadow: 0 0 3pt 2pt darkgoldenrod
+}
+
+.single-beer-image:hover{
+  box-shadow: 0 0 6pt 7pt darkgoldenrod;
+}
+
+.single-beer-image img{
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+  min-height: 75%;
+  min-width: 35%;
+}
 
 .single-brewery{
   margin-top: 5%;
@@ -349,7 +423,6 @@ form div {
   padding: .5%;
   box-shadow: 0 0 3pt 2pt gray
 }
-
 .single-brew-details {
   display: flex;
   flex-wrap: wrap;
@@ -382,6 +455,14 @@ form div {
   font-family: 'Signika', sans-serif;
 }
 
+
+.single-brew-image h2{
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-family: 'Signika', sans-serif;
+}
+
 .single-brew-image {
   display: flex;
   flex: 1;
@@ -393,13 +474,6 @@ form div {
   margin-left: 2%;
   border-radius: 15px;
   box-shadow: 0 0 3pt 2pt lightgray
-}
-
-.single-brew-image h2{
-  text-align: center;
-  color: white;
-  font-size: 32px;
-  font-family: 'Signika', sans-serif;
 }
 
 .single-brew-image img{
@@ -468,10 +542,7 @@ form div {
   outline:none;
   margin-bottom: 15px;
   width: 460px;
-  /* border-radius: 10px; */
 }
-
-
 
 .popup-body button:hover{
   background:#fff;

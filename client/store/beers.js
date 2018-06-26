@@ -3,7 +3,6 @@ import history from '../history';
 
 
 const GET_BEERS = 'GET_BEERS';
-const GET_BEER = 'GET_BEER';
 const GET_SEARCH_RESULTS = 'GET_SEARCH_RESULTS';
 const CREATE_BEER = 'CREATE_BEER';
 const UPDATE_BEER = 'UPDATE_BEER';
@@ -15,10 +14,6 @@ const getBeers = (beers) => {
     beers
   }
 }
-
-const getBeer = beer => ({
-  type: GET_BEER, beer
-})
 
 const getSearchResults = (results) => {
   return {
@@ -56,13 +51,6 @@ export function fetchBeers () {
     .catch(err => console.error('Fetching beers unsuccesful.', err))
   }
 }
-
-export const fetchBeer = id => dispatch => 
-  axios.get(`/api/beers/${id}`)
-    .then(res => res.data)
-    .then(beer => dispatch(getBeer(beer)))
-    .catch(err => console.error(`Fetching brewery ${id} unsuccesful.`, err))
-
 
 export function queryBeers (searchTerm) {
   return function thunk (dispatch) {
@@ -107,8 +95,6 @@ export default function reducer(beers = [], action) {
   switch (action.type) {
     case GET_BEERS:
       return action.beers;
-    case GET_BEER:
-      return action.beer;
     case GET_SEARCH_RESULTS:
       return action.results;
     case CREATE_BEER:

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter, Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Login, Signup, UserHome} from './components';
-import {me, fetchBeers, fetchBreweries} from './store';
+import {me, fetchBeers, fetchBreweries, fetchBeer} from './store';
 import AllBeers from './components/Beer/allBeers';
 import CreateBeer from './components/Beer/addBeer';
 import CreateBrewery from './components/Brewery/addBrewery';
@@ -11,6 +11,7 @@ import allBreweries from './components/Brewery/allBreweries';
 import SingleBrewery from './components/Brewery/singleBrewery';
 import BeerReview from './components/Beer/beerReview'
 import Cart from './components/cart'
+import SingleBeer from './components/Beer/singleBeer';
 
 
 class Routes extends Component {
@@ -29,13 +30,13 @@ class Routes extends Component {
         <Route exact path="/" component={allBreweries}/>
         <Route exact path="/breweries/:breweryId" component={SingleBrewery} />
         <Route path="/beers/:beerId/reviews" component={BeerReview} />
+        <Route path="/beers/:beerId" component={SingleBeer}/>
         {isLoggedIn && (
           <Switch>
-            {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
             <Route path="/addbeer" component={CreateBeer} />
             <Route path="/addbrewery" component={CreateBrewery}/>
-            <Route path="/cart" component={Cart}/>
+            <Route path="/checkout" component={Cart}/>
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
@@ -45,13 +46,8 @@ class Routes extends Component {
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = state => {
   return {
-    // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
-    // Otherwise, state.user will be an empty object, and state.user.id will be falsey
     isLoggedIn: !!state.user.id
   }
 }
@@ -66,13 +62,10 @@ const mapDispatch = dispatch => {
   }
 }
 
-// The `withRouter` wrapper makes sure that updates are not blocked
-// when the url changes
+
 export default withRouter(connect(mapState, mapDispatch)(Routes))
 
-/**
- * PROP TYPES
- */
+
 Routes.propTypes = {
   loadInitialData: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired

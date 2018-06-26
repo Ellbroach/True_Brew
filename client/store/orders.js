@@ -20,10 +20,10 @@ const addToCart = (item) => {
   }
 }
 
-const removeFromCart = (productId) => {
+const removeFromCart = (beerId) => {
   return {
     type: REMOVE_FROM_CART,
-    productId
+    beerId
   }
 }
 
@@ -45,10 +45,10 @@ export function createItem(item) {
   }
 }
 
-export function deleteItem(productId) {
+export function deleteItem(beerId) {
   return function thunk(dispatch) {
-    return axios.delete(`/api/cart/item/${productId}`)
-      .then(item => dispatch(removeFromCart(productId)))
+    return axios.delete(`/api/cart/item/${beerId}`)
+      .then(item => dispatch(removeFromCart(beerId)))
   }
 }
 
@@ -69,7 +69,7 @@ export default function reducer(state = {}, action) {
     case ADD_TO_CART:
       return action.cart
     case REMOVE_FROM_CART:
-      const updatedItems = state.lineItems.filter(i => i.productId !== action.productId);
+      const updatedItems = state.lineItems.filter(i => i.beerId !== action.beerId);
       return { ...state, lineItems: updatedItems }
     default:
       return state

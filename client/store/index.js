@@ -8,8 +8,9 @@ import breweries from './breweries'
 import brewery from './brewery'
 import orders from './orders'
 import reviews from './reviews'
+import beer from './beer'
 
-const reducer = combineReducers({user, beers, breweries, brewery, cart: orders, reviews})
+const reducer = combineReducers({user, beers, beer, breweries, brewery, cart: orders, reviews})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )
@@ -22,3 +23,4 @@ export * from './breweries'
 export * from './brewery'
 export * from './orders'
 export * from './reviews'
+export * from './beer'

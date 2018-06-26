@@ -111,8 +111,10 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
+  console.log('HERE')
   const orderId = req.cart.id
   const { beerId, quantity } = req.body;
+  console.log(beerId)
   LineItem.create({ beerId, quantity, orderId })
     .then(() => {
       return Order.findById(orderId, {
