@@ -9,7 +9,7 @@ class SingleBrewery extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      addedToCartMsgClss: ''
+      addedToCartMsgClss: '',
     }
     this.sendToCart = this.sendToCart.bind(this)
   }
@@ -49,18 +49,15 @@ class SingleBrewery extends React.Component {
               {foundBeers === undefined
                 ? null
                 : foundBeers.map(beer => (
-                    <div key={beer.imageUrl} className="beer-image">
+                  <div key={beer.imageUrl} className="beer-image">
                       <img src={beer.imageUrl} />
                       <h2>{beer.name}</h2>
                       <PopupBody beer={beer} />
-                      <div className="popup-body">
-                        <button
-                          type="submit"
-                          onClick={() => this.sendToCart(beer.id)}
-                        >
-                          Place an Order
-                        </button>
+                      <Link to={`/beers/${beer.id}`}>
+                      <div className='popup-body'>
+                      <button>Place an Order</button>
                       </div>
+                      </Link>
                     </div>
                   ))}
             </div>

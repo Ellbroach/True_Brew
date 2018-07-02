@@ -16,6 +16,7 @@ Order.belongsToMany(Beer, {through: LineItem}, {foreignKey: { allowNull: true }}
 Order.belongsTo(User)
 LineItem.belongsTo(Order)
 Order.hasMany(LineItem)
+User.hasMany(Review)
 
 module.exports = {
   User,

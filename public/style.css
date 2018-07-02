@@ -18,6 +18,12 @@ label {
   display: block;
 }
 
+/* 
+
+NAVBAR
+
+*/
+
 nav a {
   display: inline-block;
   margin: 1em;
@@ -25,11 +31,88 @@ nav a {
 
 .navbar {
   display: flex;
+  position: relative;
   height: 6%;
   color: white;
   align-items: center;
-  background-color: #d78258;
+  /* background-color: #d78258; */
+  background: antiquewhite;
   padding-left: 3%;
+  z-index: 5;
+}
+
+.navbar-bottom{
+  width: 100%;
+  float: left;
+  clear: both;
+  /* margin: 0 0 20px 0; */
+  padding: 0 0 2% 0;
+  background: linear-gradient(antiquewhite,	#a9916b);
+  /* border-bottom: 1px solid; */
+  box-shadow:0 2px 2px;
+  box-shadow: 0 20px 20px -20px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.navbar h1 {
+  color: white;
+  font-family: 'Lobster';
+  font-size: 3rem;
+  padding-top: 0.5rem;
+  
+}
+
+.login {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 74vw;
+  flex-wrap: wrap;
+  /* padding-right: 3% */
+}
+
+.login-box{
+  padding-top: .5px;
+  padding-right: 2px;
+  padding-bottom: .5px;
+  padding-left: 2px;
+  background-color: #F4A460;
+  box-shadow: 0 0 2pt 1.5pt black;
+  border-radius: 10px;
+  float: left;
+  margin: 12px;
+}
+
+.signup-box {
+  padding-top: .5px;
+  padding-right: 2px;
+  padding-bottom: .5px;
+  padding-left: 2px;
+  background-color: #F4A460;
+  box-shadow: 0 0 2pt 1.5pt black;
+  border-radius: 10px;
+  float: right;
+  margin: 5px;
+  margin-top: 12px;
+}
+
+.login-box:hover {
+  box-shadow: 0 0 3pt 2pt black;
+}
+
+.signup-box:hover{
+  box-shadow: 0 0 3pt 2pt black;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  width: 190%;
 }
 
 .cart-logout {
@@ -84,12 +167,17 @@ nav a {
   display: contents;
 }
 
+
+/* 
+INTRO PAGE 
+*/
+
 .intro-background {
   padding-top: 2%;
   height: 97vh;
   width: 100%;
   background-image: url('http://127.0.0.1:8080/websiteImages/backgroundImage.png');
-  box-shadow: 0px 0px 20px 15px #d78258;
+  box-shadow: 0px 10pt 10pt 10pt goldenrod;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -103,11 +191,12 @@ nav a {
   margin-left: 15%;
   text-align: center;
   margin-top: 6%;
-  background-color: #7c795d;
+  background-color: #492D1F;
   width: 25vw;
   color: white; font-size: 64px; font-family: 'Signika', sans-serif;
   border-radius: 15px;
   padding: .5%;
+  box-shadow: 0 0 2pt 2pt #492D1F
 }
 
 .intro-text h2 {
@@ -116,86 +205,12 @@ nav a {
   text-align: center;
   margin-bottom: 3px;
   letter-spacing: 2px;
-  background-color: #7c795d;
+  background-color: #492D1F;
+  box-shadow: 0 0 2pt 2pt #492D1F;
   width: 16vw;
   color: white; font-size: 32px; font-family: 'Signika', sans-serif;
   border-radius: 15px;
   padding: 3%;
-}
-
-
-.navbar-bottom{
-  width: 100%;
-  float: left;
-  clear: both;
-  /* margin: 0 0 20px 0; */
-  padding: 0 0 2% 0;
-  background: linear-gradient(#d78258, 	#a9916b);
-  /* border-bottom: 1px solid; */
-  box-shadow:0 2px 2px;
-  box-shadow: 0 20px 20px -20px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-.navbar h1 {
-  color: white;
-  font-family: 'Lobster';
-  font-size: 3rem;
-  padding-top: 0.5rem;
-  
-}
-
-.login {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  flex: 1;
-  justify-content: space-between;
-  display: flex;
-  margin-left: 74vw;
-  flex-wrap: wrap;
-  /* padding-right: 3% */
-}
-
-.login-box{
-  padding-top: .5px;
-  padding-right: 2px;
-  padding-bottom: .5px;
-  padding-left: 2px;
-  background-color: #ccdcc1;
-  box-shadow: 0 0 2pt 1.5pt black;
-  border-radius: 10px;
-  float: left;
-  margin: 12px;
-}
-
-.signup-box {
-  padding-top: .5px;
-  padding-right: 2px;
-  padding-bottom: .5px;
-  padding-left: 2px;
-  background-color: #ccdcc1;
-  box-shadow: 0 0 2pt 1.5pt black;
-  border-radius: 10px;
-  float: right;
-  margin: 5px;
-  margin-top: 12px;
-}
-
-.login-box:hover {
-  box-shadow: 0 0 3pt 2pt black;
-}
-
-.signup-box:hover{
-  box-shadow: 0 0 3pt 2pt black;
-}
-
-.logo {
-  flex: 1;
-}
-
-.logo img {
-  width: 190%;
 }
 
 form div {
@@ -233,11 +248,11 @@ form div {
 }
 
 .show-brew button {
-  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -webkit-transition: all 260ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 260ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 260ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 260ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 260ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
   display: block;
   margin: 20px auto;
   width: 280px;
@@ -305,7 +320,7 @@ form div {
   color: #000;
   margin-bottom: 40px;
   width: 380px;
-  height: 760px;
+  height: 750px;
   padding: 40px;
   border-radius: 35px;
   box-shadow: 0 0 3pt 2pt darkgoldenrod;;
@@ -317,46 +332,166 @@ form div {
 }
 
 .beer-image img{
-  max-height: 77%;
-  max-width: 77%;
+  max-height: 71%;
+  max-width: 73%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  min-height: 60%;
+  min-height: 68%;
+  min-width: 70%;
 }
 
-.beer-image h2{
+.beer-image h2 {
   color: black;
   font-family: 'Lobster';
-  font-size: 3rem;
+  font-size: 34px;
+}
+
+.beer-image button {
+  position: absolute;
+  /* bottom: 20px; */
+}
+
+.add-review-container {
+  display: block;
+  margin: 0 auto;
+  height: 80px;
+  width: 220px;
+  border-radius: 25px;
+}
+
+.add-review button {
+  height: 70px;
+  width: 220px;
+  border-radius: 20px;
+  background: #F4A460;
+  box-shadow: 0 6px #999;
+  border-width: 0;
+  font-size: 28px
+}
+
+.add-review button:active {
+  background-color: #F4A460;
+  box-shadow: 0 3px #666;
+  transform: translateY(3px);
+}
+
+.review-form{
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 450px;
+  position: relative;
+  background: brown;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 15px;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
+  padding: 1vw;
+  z-index: 5;
+  right: 37vw;
+  /* margin: 0 auto; */
+}
+
+.review-title{
+  display: flex;
+  line-height: 10px;
+  padding: 0;
+  margin-bottom: 1%;
+}
+
+.review-form h2{
+  font-size: 30px;
+  margin-right: 1vw;
+}
+
+.review-form button{
+  width: 150px;
+  height: 70px;
+  border-radius: 25px;
+  font-size: 25px;
+  background: #F4A460;
+  align-self: center;
+  margin-top: 20px;
+  box-shadow: 0 6px #999
+}
+
+.review-form button:active {
+  background-color: #F4A460;
+  box-shadow: 0 3px #666;
+  transform: translateY(3px);
+}
+
+.review-title input{
+  margin-left: 51px;
+  font-size: 25px;
+  width: 50%
+}
+
+.review-content {
+  display: flex;
+}
+
+.review-content textarea {
+  width: 90%;
+  height: 120px;
+  font-size: 25px;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center
+}
+
+.rating-container h2{
+  position: relative;
+  top: 10px;
+}
+
+.rating {
+  direction: rtl;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  color: gold;
+  font-size: 40px;
+  width: 40px;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  cursor: pointer;
+  color: gold;
+  -webkit-animation: mymove 2s;
+  animation: mymove 2s;
+  animation-direction:normal;
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+     
+@-webkit-keyframes mymove {
+  from {color: gold;}
+  to {color: gold;}
 }
 
 .single-beer {
   margin-top: 5%;
 }
 
-.single-beer h1{
-  display: block;
-  margin: auto;
-  text-align: center;
-  margin-top: 3%;
-  background-color: #4F0D04;
-  width: 25vw;
-  color: white; 
-  font-size: 80px; 
-  font-family: 'Signika', sans-serif;
-  border-radius: 15px;
-  padding: .5%;
-  box-shadow: 0 0 3pt 2pt gray
-}
-
-
 .single-beer-description {
-  display: flex;
   padding: 1.5%;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.0px;
   line-height: 55px;
-  background-color: #4F0D04;
+  background-color: brown;
   color: white;
   width: 55vw;
   border-radius: 15px;
@@ -364,10 +499,13 @@ form div {
   box-shadow: 0 0 3pt 2pt lightgray
 }
 
+.single-beer-description h1{
+  font-size: 40px;
+}
+
 .single-beer-description h2 {
   margin-left: 5%;
   margin-right: 5%;
-  color: white;
   font-size: 34px;
   font-family: 'Signika', sans-serif;
 }
@@ -394,10 +532,6 @@ form div {
   box-shadow: 0 0 3pt 2pt darkgoldenrod
 }
 
-.single-beer-image:hover{
-  box-shadow: 0 0 6pt 7pt darkgoldenrod;
-}
-
 .single-beer-image img{
   display: block;
   margin: 0 auto;
@@ -406,9 +540,45 @@ form div {
   min-width: 35%;
 }
 
+.single-beer-image form{
+  width: 40%;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10px; 
+  flex: 1;
+  margin-right: 4%;
+  background: #F4A460;
+  color: black;
+}
+
+.single-beer-image button{
+  width: 40%;
+  flex: 1;
+  border-radius: 10px;
+  margin-left: 4%;
+  font-size: 30px;
+  background: #F4A460;
+  box-shadow: 0 6px #999;
+}
+
+.single-beer-image button:active{
+  background-color: #F4A460;
+  box-shadow: 0 3px #666;
+  transform: translateY(3px);
+}
+
+.single-beer-checkout{
+  display:flex;
+}
+
+.single-beer-checkout input{
+  text-align: center;
+}
+
 .single-brewery{
   margin-top: 5%;
 }
+
 .single-brewery h1{
   display: block;
   margin: auto;
@@ -438,7 +608,7 @@ form div {
   flex: 1;
   margin-right: 2%;
   padding: 1.5%;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   line-height: 55px;
   background-color: #7c795d;
   width: 25vw;
@@ -473,7 +643,7 @@ form div {
   justify-content: space-around;
   margin-left: 2%;
   border-radius: 15px;
-  box-shadow: 0 0 3pt 2pt lightgray
+  box-shadow: 0 0 3pt 2pt lightgray;
 }
 
 .single-brew-image img{
@@ -481,6 +651,12 @@ form div {
   margin: 0 auto;
   box-shadow: 0 0 5pt 3pt gray;
   border-radius: 25px;
+  max-width: 60vw;
+  max-height: 60vh;
+}
+
+button:focus{
+  outline: 0
 }
 
 .popup-body h1 {
@@ -568,4 +744,37 @@ form div {
 .popup-body button:hover:before, .popup-body button:hover:after{
   width:100%;
   transition:800ms ease all;
+}
+
+.all-reviews{
+  margin-top: 8vh;
+  margin-bottom: 2vh;
+}
+
+.all-reviews h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.reviews{
+  width: 70vw;
+  margin: 0 auto;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
+  /* margin-left: 7.5vw; */
+  /* padding:25px; */
+  border-style: solid;
+  border-width: 4px;
+}
+
+.reviews h2{
+  font-size: 38px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.reviews h3 {
+  font-size: 28px;
+  margin-left: 5%;
+  margin-right: 5%;
 }

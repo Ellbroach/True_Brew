@@ -1,16 +1,26 @@
 'use strict ';
 const Op = require('sequelize').Op
 const router = require('express').Router()
-const { Beer, Genre } = require('../db/models')
+const { Beer, Genre, Review } = require('../db/models')
 
 
 router.get('/', (req, res, next) => {
   Beer.findAll({
     include: [
       {
+        attributes: ['rating'],
+        model: Review
+      },
+      {
         model: Genre
       }
     ]
+  })
+  .then(beers => {
+    for (let beer of beers) {
+      beer.dataValues.averageRating = beer.getAverageRating()
+    }
+    return beers
   })
     .then(beers => {
       res.json(beers)

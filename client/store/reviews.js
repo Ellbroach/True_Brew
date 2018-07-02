@@ -10,11 +10,13 @@ const createReview = review => ({type: CREATE_REVIEW, review})
 const updateReview = review => ({type: UPDATE_REVIEW, review})
 const deleteReview = id => ({type: DELETE_REVIEW, id})
 
+
 export const fetchReviews = () => dispatch =>
     axios.get('/api/reviews')
         .then(res => res.data)
         .then(reviews => dispatch(getReviews(reviews)))
         .catch(err => console.error('Fetching Reviews unsuccesful.', err))
+
 
 export const addReview = review => dispatch =>
     axios.post('/api/reviews', review)
@@ -22,16 +24,19 @@ export const addReview = review => dispatch =>
         .then(newReview => dispatch(createReview(newReview)))
         .catch(err => console.error(`Creating Review ${review} unsuccesful.`, err))
 
+
 export const editReview = (review, id) => dispatch =>
     axios.put(`/api/reviews/${id}`, review)
         .then(res => res.data)
         .then(editedReview => dispatch(updateReview(editedReview)))
         .catch(err => console.error(`Updating Review ${review} unsuccesful.`, err))
 
+
 export const removeReview = id => dispatch =>
     axios.delete(`/api/reviews/${id}`)
         .then(() => dispatch(deleteReview(id)))
         .catch(err => console.error(`Deleting Review (id: ${id}) unsuccesful.`, err))
+        
 
 export default function reducer(reviews = [], action) {
   switch (action.type) {

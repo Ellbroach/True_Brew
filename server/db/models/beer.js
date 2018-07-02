@@ -41,7 +41,23 @@ const Beer = db.define('beer', {
     brewery: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    type: {
+        type: Sequelize.ENUM('IPA', 'Imperial IPA', 'Session IPA', 'White Ale', 'Lager', 'Stout', 'Pale Ale', 
+        'Amber Ale', 'Golden Ale', 'Brown Ale', 'Kolsch', 'Pilsner',
+        'Saison', 'Wheat', 'Tripel', 'Trappist', 'Sour'),
+        allowNull: false
     }
 })
+
+Beer.prototype.getAverageRating = function(){
+    if (this.reviews === undefined){
+      return undefined
+    } else if (!this.reviews.length){
+      return null
+    }
+    const avg = this.reviews.reduce((sum, review) => sum + review.rating, 0) / this.reviews.length
+    return avg.toFixed(1)
+  }
 
 module.exports = Beer

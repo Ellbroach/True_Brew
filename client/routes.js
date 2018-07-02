@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter, Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Login, Signup, UserHome} from './components';
-import {me, fetchBeers, fetchBreweries, fetchBeer} from './store';
+import {me, fetchBeers, fetchBreweries, fetchReviews} from './store';
 import AllBeers from './components/Beer/allBeers';
 import CreateBeer from './components/Beer/addBeer';
 import CreateBrewery from './components/Brewery/addBrewery';
@@ -57,6 +57,7 @@ const mapDispatch = dispatch => {
     loadInitialData() {
       dispatch(fetchBeers())
       dispatch(fetchBreweries())
+      dispatch(fetchReviews())
       dispatch(me())
     }
   }
