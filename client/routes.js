@@ -12,6 +12,7 @@ import SingleBrewery from './components/Brewery/singleBrewery';
 import BeerReview from './components/Beer/beerReview'
 import Cart from './components/cart'
 import SingleBeer from './components/Beer/singleBeer';
+import About from './components/Other-Info/about';
 
 
 class Routes extends Component {
@@ -31,6 +32,7 @@ class Routes extends Component {
         <Route exact path="/breweries/:breweryId" component={SingleBrewery} />
         <Route path="/beers/:beerId/reviews" component={BeerReview} />
         <Route path="/beers/:beerId" component={SingleBeer}/>
+        <Route path="/about" component={About}/>
         {isLoggedIn && (
           <Switch>
             <Route path="/home" component={UserHome} />

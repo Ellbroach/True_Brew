@@ -29,26 +29,14 @@ nav a {
   margin: 1em;
 }
 
-.navbar {
-  display: flex;
-  position: relative;
-  height: 6%;
-  color: white;
-  align-items: center;
-  /* background-color: #d78258; */
-  background: antiquewhite;
-  padding-left: 3%;
-  z-index: 5;
-}
+
 
 .navbar-bottom{
   width: 100%;
   float: left;
   clear: both;
-  /* margin: 0 0 20px 0; */
   padding: 0 0 2% 0;
   background: linear-gradient(antiquewhite,	#a9916b);
-  /* border-bottom: 1px solid; */
   box-shadow:0 2px 2px;
   box-shadow: 0 20px 20px -20px;
   border-bottom-left-radius: 50px;
@@ -60,59 +48,194 @@ nav a {
   font-family: 'Lobster';
   font-size: 3rem;
   padding-top: 0.5rem;
-  
 }
+
+.navbar {
+  display: flex;
+  position: relative;
+  height: 6%;
+  color: white;
+  align-items: center;
+  background: antiquewhite;
+  /* padding-left: 3%; */
+  z-index: 5;
+}
+
+.other-info {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  bottom: 50px;
+}
+
+.other-info li{
+  width: 180px;
+  height: 120px;
+  font-weight: 600;
+  margin: 0 20px 0 20px;
+  list-style-type: none;
+  border-radius: 20px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
+  background: #F5DEB3;
+  color: black;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+.about {
+  background: #ccdcc1;
+  border-radius: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 85%;
+  margin: 0 auto;
+  margin-top: 4.5%;
+  margin-bottom: 4%;
+  align-content: space-between;
+  justify-content: space-around;
+  font-family: sans-serif;
+}
+
+.statement{
+  flex-direction: column;
+  color: #000;
+  margin-bottom: 40px;
+  font-size: 23px;
+  padding: 40px;
+  border-radius: 35px;
+  width: 40%;
+  float: right;
+  margin-right: 5vw;
+  margin-top: 65px;
+  text-align: center;
+}
+
+.founder-statement{
+  flex-direction: column;
+  text-align: center;
+  color: #000;
+  margin-bottom: 40px;
+  width: 65%;
+}
+
+.founder-statement h1{
+  font-family: 'voltage';
+  font-style: oblique;
+  font-size: 52px;
+}
+
+.founder-statement h2{
+  font-size: 38px;
+}
+
+.my-image{
+  height: 850px;
+  margin-left: 5vw;
+}
+
+.my-image img{
+  height: 70%;
+  margin-top: 90px;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+.other-info a{
+  position: relative;
+  top: 50px;
+}
+
+.other-info li{
+  position: relative;
+  z-index: 1;
+}
+
+.other-info li:hover{
+  color: white;
+}
+.other-info li:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  background: #dda42a;
+  z-index: -1;
+  transition: transform 0.32s;
+}
+
+.other-info li:hover::after{
+  transform: scaleY(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .login {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   flex: 1;
-  justify-content: space-between;
-  display: flex;
-  margin-left: 74vw;
-  flex-wrap: wrap;
-  /* padding-right: 3% */
 }
 
 .login-box{
-  padding-top: .5px;
-  padding-right: 2px;
-  padding-bottom: .5px;
-  padding-left: 2px;
-  background-color: #F4A460;
-  box-shadow: 0 0 2pt 1.5pt black;
-  border-radius: 10px;
-  float: left;
-  margin: 12px;
-}
-
-.signup-box {
-  padding-top: .5px;
-  padding-right: 2px;
-  padding-bottom: .5px;
-  padding-left: 2px;
   background-color: #F4A460;
   box-shadow: 0 0 2pt 1.5pt black;
   border-radius: 10px;
   float: right;
-  margin: 5px;
-  margin-top: 12px;
+  margin: 0 15px 0 15px;
 }
 
 .login-box:hover {
   box-shadow: 0 0 3pt 2pt black;
 }
 
-.signup-box:hover{
-  box-shadow: 0 0 3pt 2pt black;
-}
-
 .logo {
   flex: 1;
+  position: relative;
+  left: 40px;
 }
 
 .logo img {
-  width: 190%;
+  height: 220px;
 }
 
 .cart-logout {
@@ -242,6 +365,24 @@ form div {
   font-size: 32px;
 }
 
+.show-brew select {
+  width: 10vw;
+  position: relative;
+  align-self: center;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: white;
+  overflow: hidden;
+  border-radius: .25em;
+  font-size: 28px;
+}
+
+
+.show-brew h2 {
+  font-size: 28px;
+}
+
 .toggle-brew button {
   margin: auto;
   margin-bottom: 1%;
@@ -278,8 +419,8 @@ form div {
   background-color: #fff;
   color: #000;
   margin-bottom: 40px;
-  width: 300px;
-  height: 330px;
+  width: 310px;
+  height: 340px;
   padding: 40px;
   border-radius: 35px;
   box-shadow: 0 0 4pt 3pt darkgoldenrod;
@@ -314,13 +455,17 @@ form div {
   font-family: sans-serif;
 }
 
+
+
+
+
 .beer-image {
   flex-direction: column;
   background-color: #fff;
   color: #000;
   margin-bottom: 40px;
   width: 380px;
-  height: 750px;
+  height: 670px;
   padding: 40px;
   border-radius: 35px;
   box-shadow: 0 0 3pt 2pt darkgoldenrod;;
@@ -332,13 +477,10 @@ form div {
 }
 
 .beer-image img{
-  max-height: 71%;
-  max-width: 73%;
+  height: 420px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  min-height: 68%;
-  min-width: 70%;
 }
 
 .beer-image h2 {
@@ -484,7 +626,24 @@ form div {
 }
 
 .single-beer {
-  margin-top: 5%;
+  margin-top: 4%;
+}
+
+.single-beer-brewery{
+  background: white;
+  margin: 0 auto;
+  width: 30%;
+  border-radius: 45px;
+  text-align: center;
+  box-shadow: 0 0 2pt 2pt darkgoldenrod;
+}
+
+.single-beer-brewery:hover {
+  box-shadow: 0 0 4pt 6pt darkgoldenrod;
+}
+
+.single-beer-brewery img{
+  max-height: 300px;
 }
 
 .single-beer-description {
@@ -538,6 +697,7 @@ form div {
   border-radius: 25px;
   min-height: 75%;
   min-width: 35%;
+  margin-bottom: 30px;
 }
 
 .single-beer-image form{
@@ -659,6 +819,10 @@ button:focus{
   outline: 0
 }
 
+select:focus{
+  outline: 0;
+}
+
 .popup-body h1 {
   margin: 0;
   padding: 0;
@@ -702,6 +866,10 @@ button:focus{
 .popup_inner h3 {
   font-size: 30px;
   margin: 35px;
+}
+
+.beer-image button{
+  width: 100%
 }
 
 .popup-body button {

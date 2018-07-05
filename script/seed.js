@@ -204,19 +204,19 @@ Beer.create({ name: 'Hemperor',  description: 'Get ready: The Hemperor HPA, an e
 price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/New-Belgium/Hemperor.png', abv: '7.0%', brewery: 'New Belgium Brewing Company', type: 'IPA'
 }),
 Beer.create({ name: 'Flower Power',  description: 'Enjoy the clover honey hue and tropical nose of our celebrated flagship ale. Flower Power is simultaneously punchy and soothing with a big body and a finish that boasts pineapple and grapefruit. We hop and dry hop Flower Power four different times throughout the brewing process for a powerful floral hop experience. Rated the best IPA in New York State, Flower Power is highly regarded among the most discerning hop heads.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Flower-Power.png', abv: '7.2%', brewery: 'New Belgium Brewing Company', type: 'IPA'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Flower-Power.png', abv: '7.2%', brewery: 'Ithaca Beer Company', type: 'IPA'
 }),
 Beer.create({ name: 'Apricot Wheat',  description: 'Our smooth wheat beer is light in color and body…perfect for those looking for a lighter taste. The combination of wheat and barley gives Apricot Wheat a different malt character than our other ales. The hint of apricot gives this beer a pleasant nose and fruity finish.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Apricot-Wheat.png', abv: '5.0%', brewery: 'New Belgium Brewing Company', type: 'Wheat'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Apricot-Wheat.png', abv: '5.0%', brewery: 'Ithaca Beer Company', type: 'Wheat'
 }),
 Beer.create({ name: 'Brew York',  description: 'Brewed with 100% NYS Hops and 66% NYS Malts, Ithaca Beer Co.\'s Brew York Pale Ale proudly supports New York agriculture. Featuring hops from Chimney Bluffs Hoppery in Wolcott, and Ledyard Farms in King Ferry. Local malts sourced from NYS Empire Malt in Champlain and 1886 Malt House in Fulton.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Brew-York.png', abv: '5.25%', brewery: 'New Belgium Brewing Company', type: 'Pale Ale'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Brew-York.png', abv: '5.25%', brewery: 'Ithaca Beer Company', type: 'Pale Ale'
 }),
 Beer.create({ name: 'Super Stout',  description: 'This coffee oatmeal stout is a dark and luscious companion to warm your soul on cold winter nights. The smooth chocolatey character of roasted malts and full bodied herbal taste of coffee beans blend to make a bold and flavorful pint.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Super-Stout.png', abv: '5.2%', brewery: 'New Belgium Brewing Company', type: 'Stout'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Super-Stout.png', abv: '5.2%', brewery: 'Ithaca Beer Company', type: 'Stout'
 }),
 Beer.create({ name: 'Petal Pusher',  description: 'Our delightful mid-summer seasonal, Petal Pusher is an easy drinking and refreshing IPA. With a mild ABV of 4.25%, this IPA is wonderfully “sessionable” for the hot summer months. Simcoe and Chinook hops bring in fresh west coast pine and grapefruit, while Mosaic and Citra add layer of pineapple, orange, passionfruit & papaya.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Petal-Pusher.png', abv: '4.25%', brewery: 'New Belgium Brewing Company', type: 'Session IPA'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Ithaca/Petal-Pusher.png', abv: '4.25%', brewery: 'Ithaca Beer Company', type: 'Session IPA'
 }),
 Beer.create({ name: 'Eagle IPA',  description: 'Our Eagle IPA pours nice and light in color, with initial flavors of subtle malt, with hints of toast coupled with a mild sweetness. Sticking true to the American IPA style, this beer has a wonderful hop aroma and flavor. Expect rich flavors of citrus that blends into a nice mild bitterness.',
 price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Roscoe/Eagle.png', abv: '6.2%', brewery: 'Roscoe Beer Company', type: 'IPA'
@@ -246,13 +246,13 @@ Beer.create({ name: 'Robust Porter',  description: 'It’s a good bet that when 
 price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Smuttynose/Robust-Porter.png', abv: '6.2%', brewery: 'Smuttynose Brewing Company', type: 'Stout'
 }),
 Beer.create({ name: 'Stone IPA',  description: 'By definition, an India pale ale is hoppier and higher in alcohol than its little brother, pale ale—and we deliver in spades. One of the most well-respected and best-selling IPAs in the country, this golden beauty explodes with tropical, citrusy, piney hop flavors and aromas, all perfectly balanced by a subtle malt character. This crisp, extra hoppy brew is hugely refreshing on a hot day, but will always deliver no matter when you choose to drink it.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Stone/Stone-IPA.png', abv: '6.9%', brewery: 'Stone Brewing Company', type: 'IPA'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Stone/Stone-IPA.jpeg', abv: '6.9%', brewery: 'Stone Brewing Company', type: 'IPA'
 }),
 Beer.create({ name: 'Stone Delicious IPA',  description: 'While our beers are many and diverse, yet unified by overarching boldness, India pale ales are our undeniable bread and butter. The result is an intensely citrusy, beautifully bitter beer is worthy of the simple-yet-lordly title of Stone Delicious IPA. Lemondrop and El Dorado hops combine to bring on a magnificent lemon candy-like flavor that’s balanced by hop spice. It’s unlike anything we’ve tasted in nearly two decades of IPA experimentation, and another lupulin-laced creation we’re excited to present to hopheads everywhere.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Stone/Stone-Delicious-IPA.png', abv: '7.7%', brewery: 'Stone Brewing Company', type: 'IPA'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Stone/Delicious-IPA.png', abv: '7.7%', brewery: 'Stone Brewing Company', type: 'IPA'
 }),
 Beer.create({ name: 'Tangerine IPA',  description: 'This ain’t no just-add-juice approach. This one is for adults. We use bountiful whole tangerine purée, which brings pithy, crisp bitterness to the citrus flavor. In addition to the complexities of the tangerine — the likes of which you can only get by using the whole fruit — we judiciously employ just a hint of whole pineapple for a backnote (you’d likely not even pick it out of the mix if we didn’t tell you it was there). We’re not looking for a sweet concoction to appease the “I want my beer to taste like fruit juice” crowd. This is Stone. We like our IPAs to taste like IPAs. Big, bold and not for kids.',
-price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Stone/Tangerine-IPA.png', abv: '6.7%', brewery: 'Stone Brewing Company', type: 'IPA'
+price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Stone/Tangerine-Express.png', abv: '6.7%', brewery: 'Stone Brewing Company', type: 'IPA'
 }),
 Beer.create({ name: 'Save the Robots',  description: 'The party\'s just getting started for East Coast IPAs and we\'re keeping things moving with a fresh take on the style. This hazy, unfiltered gem has juicy, tropical, citrus flavors that span the multiverse of hop varieties. A big IPA that drinks easy whether you\'re a human or a disco-breaking, beer-swilling robot.',
 price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Radiant-Pig/Save-The-Robots.png', abv: '7.0%', brewery: 'Radiant Pig Craft Beers', type: 'IPA'
@@ -267,8 +267,8 @@ price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Radia
 
 
     // ('IPA', 'Imperial IPA', 'Session IPA', 'Lager', 'Stout', 'Pale Ale', 'White Ale', 'Sour'
-    //     'Amber Ale', 'Golden Ale', 'Brown Ale', 'Kolsch', 'Pilsner',
-    //     'Saison', 'Wheat', 'Tripel', 'Trappist')
+    //     'Amber Ale', 'Golden Ale', 'Brown Ale', 'Pilsner',
+    //     'Saison', 'Wheat', 'Tripel')
 
 
     const beerReviewAssociations = []

@@ -113,7 +113,6 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const orderId = req.cart.id
   const { beerId, quantity } = req.body;
-  console.log('HELLO!!!!', beerId, quantity)
   LineItem.create({ beerId, quantity, orderId })
     .then(() => {
       return Order.findById(orderId, {

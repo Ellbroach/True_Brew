@@ -7,11 +7,22 @@ import {logout} from '../store'
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
   <div className="navbar">
-  <Link to="/">
   <div className="logo">
+  <Link to="/">
     <img src='http://127.0.0.1:8080/websiteImages/True-brew-logo.png'/>
-    </div>
     </Link>
+    </div>
+    <ul className='other-info'>
+    <Link to='/about'>
+    <li><a>ABOUT</a></li>
+    </Link>
+    <Link to='/resources'>
+    <li><a>RESOURCES</a></li>
+    </Link>
+    <Link to='good-causes'>
+    <li><a>GOOD CAUSES</a></li>
+    </Link>
+    </ul>
     <div className='login'>
     <nav>
       {isLoggedIn ? (
@@ -28,8 +39,8 @@ const Navbar = ({handleClick, isLoggedIn}) => (
         <div className='login-box'>
           <Link  to="/login">Login</Link>
         </div>
-          <div className='signup-box'>
-          <Link className= "SignUp" to="/signup">Sign Up</Link>
+          <div className='login-box'>
+          <Link to="/signup">Sign Up</Link>
           </div>
           </div>
       )}

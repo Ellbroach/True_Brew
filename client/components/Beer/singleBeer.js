@@ -76,13 +76,21 @@ class SingleBeer extends React.Component {
   }
 
   render() {
-    const {beer, reviews} = this.props
+    const {beer, reviews, breweries} = this.props
     const {isLoggedIn} = this.props
     const matchedReviews = reviews.filter(review => review.beerId === beer.id)
+    const matchedBrewery = breweries.filter(brewery => brewery.name === beer.brewery)
+    console.log('MATCHED THINGS: ', matchedBrewery[0])
+
     return (
       <div>
-        {!beer.name ? null : (
+        {matchedBrewery[0] !== undefined ? (
           <div className="single-beer">
+          <Link to= {`/breweries/${matchedBrewery[0].id}`}>
+          <div className='single-beer-brewery'>
+          <img src={matchedBrewery[0].imageUrl}/>
+          </div>
+          </Link>
             <div className="single-brew-details">
               <div className="single-beer-image">
                 <img src={beer.imageUrl} />
@@ -164,16 +172,18 @@ class SingleBeer extends React.Component {
               ))}
             </div>
           </div>
-        )}
+        ) : null
+        }
       </div>
     )
   }
 }
 
-const mapState = ({user, beer, reviews}) => {
+const mapState = ({user, beer, breweries, reviews}) => {
   return {
     beer,
     reviews,
+    breweries,
     isAdmin: !user ? null : user.role,
     isLoggedIn: !!user.id
   }

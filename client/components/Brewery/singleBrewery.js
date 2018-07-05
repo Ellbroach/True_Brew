@@ -31,6 +31,7 @@ class SingleBrewery extends React.Component {
       beers === undefined
         ? null
         : beers.filter(findBeers => findBeers.brewery === brewery.name)
+        console.log(brewery)
     return (
       <div>
         {brewery.beers ? (
