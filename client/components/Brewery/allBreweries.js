@@ -31,11 +31,12 @@ class AllBreweries extends React.Component {
         return (
         this.state.showBreweries ? 
         breweries.map(brewery => 
+            <Link key={brewery.id} to= {`/breweries/${brewery.id}`}>
             <BreweryItem
             brewery={brewery}
-            key={brewery.id}
             showDeleteButton = {true}
             />
+            </Link>
         )
             :
             this.showBeers(answers)
@@ -64,12 +65,10 @@ class AllBreweries extends React.Component {
         }
     }
     
-    async UNSAFE_componentWillReceiveProps(){
-        await this.setState({
+    UNSAFE_componentWillReceiveProps(){
+       this.setState({
             beers: this.props.beers
         })
-
-        await console.log('BLAH: ', this.state.beers)
     }
 
     toggleDisplay(){
@@ -86,13 +85,14 @@ class AllBreweries extends React.Component {
     render(){
         const {beers} = this.props
         return(
-            <div>
+            <div className='all-breweries-background'>
            <div className="intro-background">
            <div className="intro-text">
-           <h1>Welcome to True Brew</h1>
+           <h1>Welcome</h1>
            <h2>Too often, large companies acquire and commercialize the craft beer process that we hold dear.  Here at True Brew, we are dedicated to honoring the spirit of craft beer by identifying breweries that are still owned and operated by their founder or by their employees, whose first and only priority is good quality beer.</h2>
            </div>
            </div>
+           <div className='all-breweries-items'>
            <div className='toggle-brew'>
            {
                this.state.showBreweries ?
@@ -144,6 +144,7 @@ class AllBreweries extends React.Component {
               }
            </div>
            </div>
+           </div>
         )
     }
 }
@@ -154,11 +155,5 @@ const mapState =( {breweries, beers} ) => {
       beers
    }
 }
-
-
-
-    // ('IPA', 'Imperial IPA', 'Session IPA', 'Lager', 'Stout', 'Pale Ale', 'White Ale', 'Sour'
-    //     'Amber Ale', 'Golden Ale', 'Brown Ale', 'Pilsner',
-    //     'Saison', 'Wheat', 'Tripel')
 
 export default connect(mapState)(AllBreweries)

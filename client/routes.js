@@ -13,6 +13,8 @@ import BeerReview from './components/Beer/beerReview'
 import Cart from './components/cart'
 import SingleBeer from './components/Beer/singleBeer';
 import About from './components/Other-Info/about';
+import Resources from './components/Other-Info/resources';
+import Causes from './components/Other-Info/good-causes'
 
 
 class Routes extends Component {
@@ -29,10 +31,12 @@ class Routes extends Component {
         <Route className="Login" path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route exact path="/" component={allBreweries}/>
-        <Route exact path="/breweries/:breweryId" component={SingleBrewery} />
+        <Route path="/breweries/:breweryId" component={SingleBrewery} />
         <Route path="/beers/:beerId/reviews" component={BeerReview} />
         <Route path="/beers/:beerId" component={SingleBeer}/>
         <Route path="/about" component={About}/>
+        <Route path= "/resources" component={Resources}/>
+        <Route path="/good-causes" component={Causes}/>
         {isLoggedIn && (
           <Switch>
             <Route path="/home" component={UserHome} />

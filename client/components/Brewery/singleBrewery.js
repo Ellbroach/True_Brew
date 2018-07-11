@@ -16,6 +16,7 @@ class SingleBrewery extends React.Component {
 
   componentDidMount() {
     this.props.fetchBrewery()
+    window.scrollTo(0, 0)
   }
 
   async sendToCart(beerId) {
@@ -36,9 +37,9 @@ class SingleBrewery extends React.Component {
       <div>
         {brewery.beers ? (
           <div className="single-brewery">
-            <h1>{`${brewery.name}`}</h1>
             <div className="single-brew-details">
               <div className="single-brew-description">
+              <h1>{`${brewery.name}`}</h1>
                 <h2>{`${brewery.description}`}</h2>
               </div>
               <div className="single-brew-image">
@@ -56,7 +57,7 @@ class SingleBrewery extends React.Component {
                       <PopupBody beer={beer} />
                       <Link to={`/beers/${beer.id}`}>
                       <div className='popup-body'>
-                      <button>Place an Order</button>
+                      <button>See Reviews</button>
                       </div>
                       </Link>
                     </div>

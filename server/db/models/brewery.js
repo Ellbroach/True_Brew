@@ -38,6 +38,10 @@ const Brewery = db.define('brewery', {
     ownerImage: {
         type: Sequelize.STRING,
         allowNull: true
+    },
+    site: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 })
 

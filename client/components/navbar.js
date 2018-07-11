@@ -14,13 +14,13 @@ const Navbar = ({handleClick, isLoggedIn}) => (
     </div>
     <ul className='other-info'>
     <Link to='/about'>
-    <li><a>ABOUT</a></li>
+    <li><h1>ABOUT</h1></li>
     </Link>
     <Link to='/resources'>
-    <li><a>RESOURCES</a></li>
+    <li><h1>RESOURCES</h1></li>
     </Link>
-    <Link to='good-causes'>
-    <li><a>GOOD CAUSES</a></li>
+    <Link to='/good-causes'>
+    <li><h1>GOOD CAUSES</h1></li>
     </Link>
     </ul>
     <div className='login'>
@@ -30,18 +30,22 @@ const Navbar = ({handleClick, isLoggedIn}) => (
         <Link to='/checkout'>
           <img src='http://127.0.0.1:8080/websiteImages/Cart.png'/>
         </Link>
-          <a href="#" onClick={handleClick}>
+          <a href="#" onClick={handleClick} className='logout'>
             Logout
           </a>
         </div>
       ) : (
-        <div>
+        <div className='login-container'>
+          <Link  to="/login">
         <div className='login-box'>
-          <Link  to="/login">Login</Link>
+          <h3>Login</h3>
         </div>
+        </Link>
+        <Link to="/signup">
           <div className='login-box'>
-          <Link to="/signup">Sign Up</Link>
+          <h3>Sign Up</h3>
           </div>
+          </Link>
           </div>
       )}
     </nav>

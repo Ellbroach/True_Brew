@@ -11,12 +11,10 @@ class BreweryItem extends React.Component {
             const brewery = this.props.brewery
             return(
                 <div className='brewery-item'>
-                    <Link to= {`/breweries/${brewery.id}`}>
                    <img src = {brewery.imageUrl} />
                    <div className='brewery-name'>
                    <h1>{brewery.name}</h1>
                    </div>
-                   </Link>
                 </div>
             )
         }

@@ -84,39 +84,39 @@ async function seed() {
     const breweries = await Promise.all([
       Brewery.create({
         name: `Allagash Brewing Company`, owner: 'Rob Todd (Founder)', description: 'Allagash Brewing Company is dedicated to crafting the best Belgian-inspired beers in the world. Best known for our flagship beer, Allagash White, we also enjoy aging beer in oak barrels (beginning with the launch of Curieux in 2004) and spontaneously fermented beers (beginning with our traditional Coolship in 2007).',
-        city: 'Portland', state: 'Maine', imageUrl: baseUrl + '/companyImages/Allagash.png', ownerImage: baseUrl + '/companyImages/founders/Allagash-Founder.png'
+        city: 'Portland', state: 'Maine', imageUrl: baseUrl + '/companyImages/Allagash.png', ownerImage: baseUrl + '/companyImages/founders/Allagash-Founder.png', site: 'https://www.allagash.com/'
       }),
       Brewery.create({
         name: 'Brooklyn Brewery', owner: 'Steve Hindy (Founder)', description: 'Like our namesake borough, The Brooklyn Brewery is made up of a rich collection of characters from all over the world. In our Williamsburg home, these characters are dedicated to brewing and selling great beer and enriching the communities we serve. Together, these Brooklynites have assembled the skills needed to transform a home brewing hobby into an independent brewery with a brand that has become an international beacon for good beer.',
-        city: 'Brooklyn', state: 'New York', imageUrl: baseUrl + '/companyImages/Brooklyn.png', ownerImage: baseUrl + '/companyImages/founders/Brooklyn-Founder.png'
+        city: 'Brooklyn', state: 'New York', imageUrl: baseUrl + '/companyImages/Brooklyn.png', ownerImage: baseUrl + '/companyImages/founders/Brooklyn-Founder.png', site: 'http://brooklynbrewery.com/'
       }),
       Brewery.create({
         name: 'Dogfish Head Brewery', owner: 'Sam Calagione (Founder)', description: 'Ever since the summer of 1995, we have been brewing, cooking, selling and talking everything beer. It\'s our pastime, our passion, our life. 23 years later, we’re just as dedicated to bringing off-centered goodness to off-centered people through our beer, scratch-made spirits, great food, our very own Inn and our events around the country.',
-        city: 'Milton', state: 'Delaware', imageUrl: baseUrl + '/companyImages/Dogfish.png', ownerImage: baseUrl + '/companyImages/founders/Dogfish-Founder.png'
+        city: 'Milton', state: 'Delaware', imageUrl: baseUrl + '/companyImages/Dogfish.png', ownerImage: baseUrl + '/companyImages/founders/Dogfish-Founder.png', site: 'https://www.dogfish.com/'
       }),
       Brewery.create({
         name: `Ithaca Beer Company`, owner: 'Dan Mitchell (Founder)', description: 'Ithaca Beer Co. was founded in 1998 by Dan Mitchell in a small renovated retail store just outside of Ithaca, New York. The original space had a small 10 barrel brewhouse, a modest tasting bar and sold full growlers to go as well as homebrew supplies. Today, Ithaca Beer brews about 25,000 barrels of beer per year and features both 50 and 5 barrel pilot brew houses and a full service farm-to-table brewpub. In addition to a state of the art brewing facility, Ithaca Beer has fully automated packaging capabilities for bottling, canning and kegging. Ithaca Beer distributes beer to 54 wholesalers in 14 states in the Northeast from New England in the East to Ohio in the West and Virginia and North Carolina to the South.',
-        city: 'Ithaca', state: 'New York', imageUrl: baseUrl + '/companyImages/Ithaca.png', ownerImage: baseUrl + '/companyImages/founders/Ithaca-Founder.png'
+        city: 'Ithaca', state: 'New York', imageUrl: baseUrl + '/companyImages/Ithaca.png', ownerImage: baseUrl + '/companyImages/founders/Ithaca-Founder.png', site: 'https://www.ithacabeer.com/homepage'
       }),
       Brewery.create({
         name: 'New Belgium Brewing Company', owner: '100% Employee owned', description: 'New Belgium Brewing Purpose Statement: To manifest our love and talent by crafting our customers\' favorite brands and proving business can be a force for good.',
-        city: 'Fort Collins', state: 'Colorado', imageUrl: baseUrl + '/companyImages/NewBelgium.png', ownerImage: baseUrl + '/companyImages/founders/New-Belgium-Founder.png'
+        city: 'Fort Collins', state: 'Colorado', imageUrl: baseUrl + '/companyImages/NewBelgium.png', ownerImage: baseUrl + '/companyImages/founders/New-Belgium-Founder.png', site: 'https://www.newbelgium.com/'
       }),
       Brewery.create({
         name: 'Roscoe Beer Company', owner: 'Phil Vallone (founder)', description: 'Brought into the world by a small group of folks with a passion for craft beer and a deep-rooted love for their hometown of Roscoe, the The Roscoe Beer Co launched its flagship brew, Trout Town American Amber Ale in April 2013. Since then the brewery has added on delicious new favorites such as the Trout Town Brown Ale and the Trout Town Rainbow Red Ale. Brewmaster Josh “The Kid” Hughes will brew seasonal beers such as the The Bavarian or the Barley Bonfire throughout the year.',
-        city: 'Roscoe', state: 'New York', imageUrl: baseUrl + '/companyImages/Roscoe.png', ownerImage: baseUrl + '/companyImages/founders/Roscoe-Founders.png'
+        city: 'Roscoe', state: 'New York', imageUrl: baseUrl + '/companyImages/Roscoe.png', ownerImage: baseUrl + '/companyImages/founders/Roscoe-Founders.png', site: 'https://roscoebeercompany.com/'
       }),
       Brewery.create({
         name: 'Smuttynose Brewing Company', owner: 'Peter Egelstein (Founder)', description: 'Smuttynose is a genuine craft brewery. Our mission: to brew fine, fresh, distinctive beers, characteristic of our wholesome New England origins. Simple as that.',
-        city: 'Hampton', state: 'New Hampshire', imageUrl: baseUrl + '/companyImages/Smuttynose.png', ownerImage: baseUrl + '/companyImages/founders/Smuttynose-Founder.png'
+        city: 'Hampton', state: 'New Hampshire', imageUrl: baseUrl + '/companyImages/Smuttynose.png', ownerImage: baseUrl + '/companyImages/founders/Smuttynose-Founder.png', site: 'https://roscoebeercompany.com/'
       }),
       Brewery.create({
         name: 'Stone Brewing Company', owner: 'Greg Koch (founder)', description: 'We are the global standard bearer for independent craft beer. We put Team Stone first in order to create badass beer and amazing experiences. We\'re quality nuts and freshness fanatics, and we\'re head over heels for hops. We’re proud to be the largest employer in craft beer with a dynamic team spanning three continents. We have always been independent, and we will always be independent.',
-        city: 'Escondido', state: 'California', imageUrl: baseUrl + '/companyImages/Stone.png', ownerImage: baseUrl + '/companyImages/founders/Stone-Founder.png'
+        city: 'Escondido', state: 'California', imageUrl: baseUrl + '/companyImages/Stone.png', ownerImage: baseUrl + '/companyImages/founders/Stone-Founder.png', site: 'https://www.stonebrewing.com/'
       }),
       Brewery.create({
         name: 'Radiant Pig Craft Beers', owner: 'Rob Pihl and Laurisa Milici (Founders)', description: 'Radiant Pig Craft Beers began as a pipe dream for a couple of homebrewers in a small Manhattan apartment. After years of perfecting recipes, countless hours of researching (drinking beer) and a ton of trips to Brooklyn fetching ingredients, we finally got our very own brewing business off the ground. In February 2013, we brewed our first commerical batch of our flagship beer, Junior.',
-        city: 'New York', state: 'New York', imageUrl: baseUrl + '/companyImages/RadiantPig.png', ownerImage: baseUrl + '/companyImages/founders/Radiant-Pig-Founder.png'
+        city: 'New York', state: 'New York', imageUrl: baseUrl + '/companyImages/RadiantPig.png', ownerImage: baseUrl + '/companyImages/founders/Radiant-Pig-Founder.png', site: 'https://www.radiantpigbeer.us/'
       })
     ])
 

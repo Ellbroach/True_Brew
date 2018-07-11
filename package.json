@@ -63,6 +63,7 @@
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^7.0.3",
+    "save-dev": "^2.0.0",
     "sequelize": "^4.3.1",
     "slick-carousel": "^1.8.1",
     "socket.io": "^2.0.3",

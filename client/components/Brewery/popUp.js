@@ -35,7 +35,7 @@ export class PopupBody extends React.Component {
     render() {
       return (
         <div className='popup-body'>
-          <button onClick={this.togglePopup.bind(this)}>See Details</button>
+          <button onClick={this.togglePopup.bind(this)}>Read Description</button>
           {this.state.showPopup ? 
             <Popup
               beer= {this.props.beer}

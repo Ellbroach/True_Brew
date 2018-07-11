@@ -30,6 +30,7 @@ class SingleBeer extends React.Component {
   componentDidMount() {
     this.props.fetchBeer()
     this.props.fetchReviews()
+    window.scrollTo(0, 0)
   }
 
   handleChangeQuantity(event) {
@@ -80,7 +81,6 @@ class SingleBeer extends React.Component {
     const {isLoggedIn} = this.props
     const matchedReviews = reviews.filter(review => review.beerId === beer.id)
     const matchedBrewery = breweries.filter(brewery => brewery.name === beer.brewery)
-    console.log('MATCHED THINGS: ', matchedBrewery[0])
 
     return (
       <div>
