@@ -73,6 +73,8 @@ const createApp = () => {
     }
   })
 
+  app.use('/github', (req, res, next) => res.redirect('https://github.com/Ellbroach/True_Brew'))
+
   // sends index.html
   app.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public/index.html'))
