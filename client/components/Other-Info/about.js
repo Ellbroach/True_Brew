@@ -3,7 +3,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 
-
+const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8080' : 'https://true-brew.herokuapp.com'
 
 const About = () => (
     <div className='about'>
@@ -16,7 +16,7 @@ const About = () => (
         <h2>Hi, my name is Elliot Broach and I have a long-standing passion for finding truly independent craft beers.  Favoring light-bodied, citra-hopped, east-coast IPAs, I have spent most of my beer drinking years enjoying crafts in upstate New York.  I created True Brew as a way for people to connect and learn more about the craft beer community.  Thank you for stopping by, and please take the time to sign up and leave a few beer reviews.</h2>
         </div>
         <div className= 'my-image'>
-        <img src='http://127.0.0.1:8080/websiteImages/Olive.png'/>
+        <img src={baseUrl + '/websiteImages/Olive.png'}/>
         </div>
         </div>
     </div>

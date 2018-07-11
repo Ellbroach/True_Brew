@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
+const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8080' : 'https://true-brew.herokuapp.com'
+
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
   <div className="navbar">

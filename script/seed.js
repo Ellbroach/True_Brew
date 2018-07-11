@@ -80,7 +80,7 @@ async function seed() {
     const userList = createUsers(makeUsers)
     const users = await Promise.all(userList.map(user => User.create(user)));
     console.log(`seeded ${users.length} users`);
-    const baseUrl = 'http://127.0.0.1:8080';
+    const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8080' : 'https://true-brew.herokuapp.com'
     const breweries = await Promise.all([
       Brewery.create({
         name: `Allagash Brewing Company`, owner: 'Rob Todd (Founder)', description: 'Allagash Brewing Company is dedicated to crafting the best Belgian-inspired beers in the world. Best known for our flagship beer, Allagash White, we also enjoy aging beer in oak barrels (beginning with the launch of Curieux in 2004) and spontaneously fermented beers (beginning with our traditional Coolship in 2007).',
