@@ -13,7 +13,7 @@ const cart = props.cart
       <h1>Your Cart</h1>
       {!cart.lineItems || (cart.lineItems.length === 0) ? (<p>Your cart is empty.</p>) :
         (
-          <div>
+          <div className='cart-table'>
             <table>
               <thead>
                 <tr>
