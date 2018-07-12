@@ -32,6 +32,8 @@ describe('Routes without seed data', () => {
             availability: 'pending',
             abv: '6%',
             genres: ['rock'],
+            brewery: 'Allagash',
+            type: 'IPA',
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg',
         }
         const otherBeer = {
@@ -41,6 +43,8 @@ describe('Routes without seed data', () => {
             abv: '6%',
             availability: 'pending',
             genres: [{name:'rock', id:1}],
+            brewery: 'Allagash',
+            type: 'IPA',
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg',
         }
 
@@ -87,6 +91,8 @@ describe('Routes without seed data', () => {
             abv: '5%',
             date: ['thing'],
             description: 'what do you think this is',
+            type: 'IPA',
+            brewery: 'Allagash',
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg'
         }
 
