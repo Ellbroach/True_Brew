@@ -34,7 +34,7 @@ class SingleBeer extends React.Component {
   }
 
   handleChangeQuantity(event) {
-    this.setState(event.target.value)
+    this.setState({quantity: event.target.value})
   }
 
   handleChangeTitle(event) {
@@ -45,9 +45,9 @@ class SingleBeer extends React.Component {
     this.setState({content: event.target.value})
   }
 
-  async handleRating(event){
+   handleRating(event){
     const rating = event.target.id
-    await this.setState({rating: rating})
+    this.setState({rating: rating})
   }
 
   sendToCart() {
@@ -81,7 +81,7 @@ class SingleBeer extends React.Component {
     const {isLoggedIn} = this.props
     const matchedReviews = reviews.filter(review => review.beerId === beer.id)
     const matchedBrewery = breweries.filter(brewery => brewery.name === beer.brewery)
-
+    console.log('STATE: ', this.state)
     return (
       <div>
         {matchedBrewery[0] !== undefined ? (

@@ -11,7 +11,7 @@ const Navbar = ({handleClick, isLoggedIn}) => (
   <div className="navbar">
   <div className="logo">
   <Link to="/">
-    <img src='http://127.0.0.1:8080/websiteImages/True-brew-logo.png'/>
+    <img src={baseUrl + '/websiteImages/True-brew-logo.png'}/>
     </Link>
     </div>
     <ul className='other-info'>
@@ -30,7 +30,7 @@ const Navbar = ({handleClick, isLoggedIn}) => (
       {isLoggedIn ? (
         <div className='cart-logout'>
         <Link to='/checkout'>
-          <img src='http://127.0.0.1:8080/websiteImages/Cart.png'/>
+          <img src= {baseUrl + '/websiteImages/Cart.png'}/>
         </Link>
           <a href="#" onClick={handleClick} className='logout'>
             Logout

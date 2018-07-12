@@ -1,5 +1,5 @@
 {
-  "name": "quicket",
+  "name": "true-brew",
   "version": "1.0.0",
   "description": "Some boilerplate code to get you started - get shakin'!",
   "engines": {
@@ -32,7 +32,7 @@
       "git add"
     ]
   },
-  "author": "Fullstack Academy of Code",
+  "author": "Elliot Broach",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
