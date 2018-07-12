@@ -81,7 +81,6 @@ class SingleBeer extends React.Component {
     const {isLoggedIn} = this.props
     const matchedReviews = reviews.filter(review => review.beerId === beer.id)
     const matchedBrewery = breweries.filter(brewery => brewery.name === beer.brewery)
-    console.log('STATE: ', this)
     return (
       <div>
         {matchedBrewery[0] !== undefined ? (

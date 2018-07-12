@@ -33,19 +33,41 @@ describe('Routes without seed data', () => {
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg',
             state: 'CT',
             city: 'Wilton',
+            site: 'site',
         }
         const otherBrewery = {
             name: 'yamiyami',
             owner: 'yo',
             description: 'what do you think this is',
-            beers: [{name:'dogfish'}],
+            beers: [{
+                name: 'yamiyami',
+                price: 10,
+                time: '0:20',
+                abv: '5%',
+                date: ['thing'],
+                description: 'what do you think this is',
+                type: 'IPA',
+                brewery: 'Allagash',
+                imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg'
+            }],
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg',
             state: 'CT',
             city: 'Wilton',
+            site: 'site',
         }
 
         beforeEach(() => {
-            Beer.create({name: 'dogfish', description: 'lalala', abv: '5%', price: 10, availability: 'available', imageUrl: 'blah'})
+            Beer.create({
+                name: 'yamiyami',
+                price: 10,
+                time: '0:20',
+                abv: '5%',
+                date: ['thing'],
+                description: 'what do you think this is',
+                type: 'IPA',
+                brewery: 'Allagash',
+                imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg'
+            })
             return Brewery.create( fakeBrewery )
         })
 
@@ -87,6 +109,7 @@ describe('Routes without seed data', () => {
             imageUrl: 'https://www.macalester.edu/sustainability/wp-content/uploads/sites/90/2016/07/realfood.jpg',
             state: 'CT',
             city: 'Wilton',
+            site: 'site',
         }
 
         beforeEach(() => {
