@@ -34,8 +34,6 @@ nav a {
   margin: 1em;
 }
 
-
-
 .navbar-bottom{
   width: 100%;
   float: left;
@@ -51,7 +49,7 @@ nav a {
 .navbar {
   display: flex;
   position: relative;
-  height: 6%;
+  height: 120px;
   color: white;
   align-items: center;
   background: antiquewhite;
@@ -128,15 +126,14 @@ nav a {
 }
 
 .other-info h1{
-  font-size: 20px;
+  font-size: 11px;
   position: relative;
-  top: 30px;
+  top: 23px;
 }
 
 .other-info li{
-  width: 180px;
-  height: 120px;
-  font-weight: 600;
+  width: 100px;
+  height: 75px;
   margin: 0 15px 0 15px;
   list-style-type: none;
   border-radius: 20px;
@@ -181,11 +178,10 @@ nav a {
   float: right;
   margin: 0 15px 0 15px;
   position: relative;
-  right: 70px;
 }
 .login {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 14px;
   flex: 1;
   color: black
 }
@@ -194,7 +190,6 @@ nav a {
   background-color: rgb(230, 182, 141);
   box-shadow: 0 0 2pt 1.5pt black;
   border-radius: 10px;
-  /* font-weight: 300; */
 }
 
 .login-box h3{
@@ -210,11 +205,11 @@ nav a {
 .logo {
   flex: 1;
   position: relative;
-  left: 70px;
+  left: 40px;
 }
 
 .logo img {
-  height: 220px;
+  height: 110px;
 }
 
 .auth-form{
@@ -311,7 +306,7 @@ INTRO PAGE
   height: 97vh;
   width: 100%;
   background-image: url('/websiteImages/backgroundImage.png');
-  box-shadow: 0px 0pt 5pt 6pt #a9916b;
+  box-shadow: 0px 0pt 5pt 6pt #492D1F;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -327,13 +322,13 @@ INTRO PAGE
   background-color: #492D1F;
   box-shadow: 0 0 2pt 2pt #492D1F;
   border-radius: 25px;
-  width: 25vw;
+  width: 350px;
   padding: 1%;
 }
 
 .intro-text h1 {
   color: white;
-  font-size: 78px;
+  font-size: 48px;
   font-family: 'Arvo';
 }
 
@@ -342,10 +337,10 @@ INTRO PAGE
   letter-spacing: 2px;
   font-family: 'Fira Sans';
   color: white;
-  font-size: 36px;
+  font-size: 19px;
   border-radius: 15px;
-  padding-top: 4.5vh;
-  line-height: 1.6;
+  padding-top: 3.5vh;
+  line-height: 1.4;
 }
 
 form div {
@@ -365,9 +360,9 @@ form div {
   border-radius: 35px;
   background: cornsilk;
   padding-bottom: 3%;
-  width: 78%;
+  width: 82%;
   margin: 6% auto;
-  box-shadow: 0pt 0pt 5pt 5pt brown
+  box-shadow: 0pt 0pt 3pt 3pt brown
 }
 
 .all-breweries-background {
@@ -378,7 +373,7 @@ form div {
 .all-breweries {
   display: flex;
   flex-wrap: wrap;
-  max-width: 65%;
+  width: 75%;
   margin: 0 auto;
   margin-top: 3%;
   align-content: space-between;
@@ -387,11 +382,11 @@ form div {
 }
 
 .show-brew {
-  margin-top: 4%;
+  margin-top: 4.5%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 32px;
+  font-size: 20px;
 }
 
 .show-brew h1{
@@ -399,11 +394,10 @@ form div {
 }
 
 .show-brew select {
-  width: 10vw;
   position: relative;
   align-self: center;
-  width: 20em;
-  height: 3em;
+  width: 6em;
+  height: 1.5em;
   line-height: 3;
   background: white;
   overflow: hidden;
@@ -413,7 +407,7 @@ form div {
 
 
 .show-brew h2 {
-  font-size: 34px;
+  font-size: 22px;
   font-family: 'Fira Sans'
 }
 
@@ -430,12 +424,12 @@ form div {
   transition: all 260ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
   display: block;
   margin: 20px auto;
-  width: 280px;
-  height: 80px;
+  width: 180px;
+  height: 60px;
   text-decoration: none;
   border-radius: 10px;
   padding: 15px;
-  font-size: 28px;
+  font-size: 18px;
 }
 
 .show-brew button {
@@ -452,16 +446,16 @@ form div {
   flex-direction: column;
   background-color: #fff;
   color: #000;
-  margin: 25px 12px;
-  width: 340px;
-  height: 300px;
-  padding: 40px;
-  border-radius: 35px;
-  box-shadow: 0 0 4pt 3pt darkgoldenrod;
+  margin: 16px 8px;
+  width: 190px;
+  height: 165px;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 3pt 2pt darkgoldenrod;
 }
 
 .brewery-item:hover {
-  box-shadow: 0 0pt 8pt 7pt darkgoldenrod;
+  box-shadow: 0 0pt 6pt 5pt darkgoldenrod;
 }
 
 .brewery-item img {
@@ -481,6 +475,7 @@ form div {
 .brewery-name h1{
   color: black;
   font-family: 'Fira Sans';
+  font-size: 18px;
 }
 
 .beer-image-container {
@@ -506,8 +501,8 @@ form div {
   margin-bottom: 40px;
   margin-left: 10px;
   margin-right: 10px;
-  width: 370px;
-  height: 665px;
+  width: 200px;
+  height: 350px;
   padding: 20px;
   border-radius: 35px;
   box-shadow: 0 0 3pt 2pt darkgoldenrod;;
@@ -515,11 +510,11 @@ form div {
 }
 
 .beer-image:hover{
-  box-shadow: 0 0 7pt 6pt darkgoldenrod;
+  box-shadow: 0 0 6pt 5pt darkgoldenrod;
 }
 
 .beer-image img{
-  height: 420px;
+  height: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -528,12 +523,11 @@ form div {
 .beer-image h2 {
   color: black;
   font-family: 'Fira Sans';
-  font-size: 32px;
+  font-size: 22px;
 }
 
 .beer-image button {
   position: absolute;
-  /* bottom: 20px; */
 }
 
 .add-review-container {
@@ -676,7 +670,7 @@ form div {
   background: white;
   margin: 0 auto;
   margin-top: 4%;
-  padding: 20px;
+  padding: 12px;
   width: 15%;
   border-radius: 35px;
   text-align: center;
@@ -684,7 +678,7 @@ form div {
 }
 
 .single-beer-brewery:hover {
-  box-shadow: 0 0 4pt 6pt darkgoldenrod;
+  box-shadow: 0 0 4pt 3pt darkgoldenrod;
 }
 
 .single-beer-brewery img{
@@ -695,7 +689,6 @@ form div {
 .single-beer-description {
   padding: 1.5%;
   letter-spacing: 1.0px;
-  line-height: 55px;
   background-color: brown;
   color: white;
   width: 55vw;
@@ -705,14 +698,14 @@ form div {
 }
 
 .single-beer-description h1{
-  font-size: 44px;
+  font-size: 32px;
   font-family: 'Arvo'
 }
 
 .single-beer-description h2 {
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 34px;
+  font-size: 20px;
   font-family: 'Fira Sans';
 }
 
@@ -742,14 +735,13 @@ form div {
   display: block;
   margin: 0 auto;
   border-radius: 25px;
-  min-height: 75%;
-  min-width: 35%;
-  margin-bottom: 30px;
+  height: 350px;
+  margin-bottom: 20px;
 }
 
 .single-beer-image form{
   width: 40%;
-  font-size: 30px;
+  font-size: 16px;
   text-align: center;
   border-radius: 10px; 
   flex: 1;
@@ -763,9 +755,9 @@ form div {
   flex: 1;
   border-radius: 10px;
   margin-left: 4%;
-  font-size: 30px;
+  font-size: 16px;
   background: #F4A460;
-  box-shadow: 0 6px #999;
+  box-shadow: 0 4px #999;
 }
 
 .single-beer-image button:active{
@@ -903,7 +895,7 @@ select:focus{
 
 .popup_inner h1 {
   margin-top: 3%;
-  font-size: 50px;
+  font-size: 28px;
   color: black;
   background-color: antiquewhite;
   font-family: 'Arvo';
@@ -913,8 +905,8 @@ select:focus{
 
 .popup_inner h3 {
   font-family:'Ubuntu';
-  font-size: 30px;
-  margin: 35px;
+  font-size: 14px;
+  margin: 20px;
 }
 
 .beer-image button{
@@ -927,14 +919,14 @@ select:focus{
   border:none;
   position:relative;
   right: 20px;
-  height:60px;
-  font-size:1.6em;
-  padding:0 2em;
+  height:30px;
+  font-size: 14px;
+  padding:0 12px;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
   margin-bottom: 15px;
-  width: 410px;
+  width: 240px;
 }
 
 .popup-body button:hover{
@@ -965,14 +957,14 @@ select:focus{
 
 .all-reviews{
   margin: 8vh auto 2vh;
-  width: 85%;
+  width: 80%;
   background: antiquewhite;
   border-radius: 25px;
-  padding: 30px;
+  padding: 22px;
 }
 
 .all-reviews h1 {
-  font-size: 50px;
+  font-size: 36px;
   text-align: center;
   font-family: 'Arvo'
 }
@@ -987,14 +979,14 @@ select:focus{
 }
 
 .reviews h2{
-  font-size: 42px;
+  font-size: 28px;
   margin-left: 5%;
   margin-right: 5%;
   font-family: 'Arvo'
 }
 
 .reviews h3 {
-  font-size: 34px;
+  font-size: 20px;
   margin-left: 5%;
   margin-right: 5%;
   font-family: 'Fira Sans'
