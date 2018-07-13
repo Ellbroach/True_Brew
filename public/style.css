@@ -76,14 +76,18 @@ nav a {
   color: #000;
   margin-bottom: 40px;
   font-size: 23px;
-  padding: 40px;
+  padding: 20px;
   border-radius: 35px;
   width: 40%;
   float: right;
   margin-right: 5vw;
-  margin-top: 65px;
   text-align: center;
   font-family: 'Fira Sans'
+}
+
+.statement h2{
+  font-size: 21px;
+  line-height: 1.4
 }
 
 .founder-statement{
@@ -95,25 +99,22 @@ nav a {
   font-family: 'Fira Sans'
 }
 
-
-
 .founder-statement h1{
   font-family: 'Arvo';
-  font-size: 62px;
+  font-size: 32px;
 }
 
 .founder-statement h2{
-  font-size: 38px;
+  font-size: 24px;
 }
 
 .my-image{
-  height: 850px;
+  height: 475px;
   margin-left: 5vw;
 }
 
 .my-image img{
   height: 70%;
-  margin-top: 90px;
   border-radius: 20px;
 }
 
@@ -222,7 +223,9 @@ nav a {
 }
 
 .logout{
-  padding: 20px;
+  position: relative;
+  bottom: 10px;
+  padding: 15px;
   background: rgb(230, 182, 141);
   border-radius: 10px;
   color: black;
@@ -239,10 +242,10 @@ nav a {
 }
 
 .cart-logout img {
-  width: 65px;
-  height: 65px;
+  width: 45px;
+  height: 45px;
   position: relative;
-  top: 10px;
+  top: 5px;
 }
 
 .cart {
@@ -402,7 +405,7 @@ form div {
   background: white;
   overflow: hidden;
   border-radius: .25em;
-  font-size: 28px;
+  font-size: 18px;
 }
 
 
@@ -523,7 +526,7 @@ form div {
 .beer-image h2 {
   color: black;
   font-family: 'Fira Sans';
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .beer-image button {
@@ -538,14 +541,18 @@ form div {
   border-radius: 25px;
 }
 
+.add-review {
+  text-align: center;
+}
+
 .add-review button {
-  height: 70px;
-  width: 220px;
+  height: 40px;
+  width: 120px;
   border-radius: 20px;
   background: #F4A460;
-  box-shadow: 0 6px #999;
+  box-shadow: 0 4px #999;
   border-width: 0;
-  font-size: 28px
+  font-size: 18px;
 }
 
 .add-review button:active {
@@ -558,8 +565,9 @@ form div {
   display: flex;
   flex-direction: column;
   width: 80vw;
-  height: 450px;
+  height: 280px;
   position: relative;
+  margin: 0 auto;
   background: brown;
   border-width: 4px;
   border-style: solid;
@@ -568,7 +576,8 @@ form div {
   margin-bottom: 3vh;
   padding: 1vw;
   z-index: 5;
-  right: 37vw;
+  right: 33.5vw;
+  text-align: center;
   /* margin: 0 auto; */
 }
 
@@ -580,19 +589,19 @@ form div {
 }
 
 .review-form h2{
-  font-size: 30px;
+  font-size: 17px;
   margin-right: 1vw;
 }
 
 .review-form button{
-  width: 150px;
-  height: 70px;
+  width: 125px;
+  height: 55px;
   border-radius: 25px;
-  font-size: 25px;
+  font-size: 15px;
   background: #F4A460;
   align-self: center;
   margin-top: 20px;
-  box-shadow: 0 6px #999
+  box-shadow: 0 4px #999
 }
 
 .review-form button:active {
@@ -603,7 +612,7 @@ form div {
 
 .review-title input{
   margin-left: 51px;
-  font-size: 25px;
+  font-size: 16px;
   width: 50%
 }
 
@@ -613,8 +622,8 @@ form div {
 
 .review-content textarea {
   width: 90%;
-  height: 120px;
-  font-size: 25px;
+  height: 100px;
+  font-size: 16px;
 }
 
 .rating-container {
@@ -624,7 +633,7 @@ form div {
 
 .rating-container h2{
   position: relative;
-  top: 10px;
+  top: 20px;
 }
 
 .rating {
@@ -640,6 +649,7 @@ form div {
   color: gold;
   font-size: 40px;
   width: 40px;
+  top: 18px;
 }
 
 .rating > span:hover:before,
@@ -786,7 +796,7 @@ form div {
   background-color: #965807;
   width: 25vw;
   color: white; 
-  font-size: 76px; 
+  font-size: 38px; 
   font-family: 'Markazi';
   padding: .5%;
 }
@@ -808,7 +818,7 @@ form div {
   width: 25vw;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 0 2pt 2pt rgba(165, 42, 42, 0.575)
+  box-shadow: 0 0 1.5pt 1.5pt #654321;
 }
 
 .single-brew-description h2 {
@@ -816,7 +826,7 @@ form div {
   margin-right: 12%;
   margin-top: 40px;
   color: white;
-  font-size: 40px;
+  font-size: 20px;
   font-family: 'Ubuntu';
   letter-spacing: 1.2px;
   line-height: 1.4;
@@ -841,7 +851,7 @@ form div {
   justify-content: space-around;
   margin-left: 2%;
   border-radius: 15px;
-  box-shadow: 0 0 2pt 2pt rgba(165, 42, 42, 0.575);
+  box-shadow: 0 0 1.5pt 1.5pt #654321;
 }
 
 .single-brew-image img{
@@ -961,6 +971,7 @@ select:focus{
   background: antiquewhite;
   border-radius: 25px;
   padding: 22px;
+  box-shadow: 0 0 2pt 2pt darkgoldenrod;
 }
 
 .all-reviews h1 {
@@ -1007,18 +1018,20 @@ Resources
 
 .resources h1{
   padding-top: 2vh;
-  font-size: 46px;
+  font-size: 26px;
   font-family: 'Arvo'
 }
 
 .resources h2{
-  font-size: 26px;
+  font-size: 18px;
   font-family: 'Fira Sans';
   padding-top: 8px;
+  margin: 0 150px;
+  padding-bottom: 20px;
 }
 
 .resources h4 {
-  font-size: 34px;
+  font-size: 15px;
   font-family: 'Fira Sans';
   padding: 12px;
 }
@@ -1027,21 +1040,15 @@ Resources
 Good Causes
  */
 
- .resources h1{
-   font-size: 60px;
- }
- .resources h2{
-   font-size: 45px;
- }
-
 .cause{
-  margin: 40px 80px;
-  padding: 40px;
+  margin: 15px 40px;
+  padding: 15px;
 }
 
 
 .cause h3{
-  font-size: 32px;
+  font-size: 20px;
+  font-family: 'Fira Sans';
 }
 .cause img{
   max-height: 300px;
