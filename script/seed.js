@@ -116,7 +116,7 @@ async function seed() {
       }),
       Brewery.create({
         name: 'Radiant Pig Craft Beers', owner: 'Rob Pihl and Laurisa Milici (Founders)', description: 'Radiant Pig Craft Beers began as a pipe dream for a couple of homebrewers in a small Manhattan apartment. After years of perfecting recipes, countless hours of researching (drinking beer) and a ton of trips to Brooklyn fetching ingredients, we finally got our very own brewing business off the ground. In February 2013, we brewed our first commerical batch of our flagship beer, Junior.',
-        city: 'New York', state: 'New York', imageUrl: baseUrl + '/companyImages/RadiantPig.png', ownerImage: baseUrl + '/companyImages/founders/Radiant-Pig-Founder.png', site: 'https://www.radiantpigbeer.us/'
+        city: 'New York', state: 'New York', imageUrl: baseUrl + '/companyImages/RadiantPig.png', ownerImage: baseUrl + '/companyImages/founders/Radiant-Pig-Founders.png', site: 'https://www.radiantpigbeer.us/'
       })
     ])
 
