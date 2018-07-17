@@ -23,10 +23,8 @@ label {
   display: block;
 }
 
-/* 
-
+/*
 NAVBAR
-
 */
 
 nav a {
@@ -56,7 +54,6 @@ nav a {
   z-index: 5;
 }
 
-
 .about {
   background: antiquewhite;
   border-radius: 15px;
@@ -75,10 +72,10 @@ nav a {
   flex-direction: column;
   color: #000;
   margin-bottom: 40px;
-  font-size: 23px;
+  font-size: 20px;
   padding: 20px;
   border-radius: 35px;
-  width: 40%;
+  width: 37%;
   float: right;
   margin-right: 5vw;
   text-align: center;
@@ -109,15 +106,16 @@ nav a {
 }
 
 .my-image{
-  height: 475px;
+  height: 450px;
   margin-left: 5vw;
 }
 
 .my-image img{
-  height: 70%;
+  height: 65%;
   border-radius: 20px;
+  position: relative;
+  top: 50px;
 }
-
 
 .other-info {
   display: flex;
@@ -299,7 +297,6 @@ nav a {
   margin: 0 auto;
 }
 
-
 /* 
 INTRO PAGE 
 */
@@ -407,7 +404,6 @@ form div {
   border-radius: .25em;
   font-size: 18px;
 }
-
 
 .show-brew h2 {
   font-size: 22px;
@@ -578,7 +574,6 @@ form div {
   z-index: 5;
   right: 33.5vw;
   text-align: center;
-  /* margin: 0 auto; */
 }
 
 .review-title{
