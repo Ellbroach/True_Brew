@@ -34,7 +34,6 @@ const associateBeer = (breweries, beers) => {
 const associateFlavors = (genres, beers) => {
   const genreBeerAssociations = []
     genreBeerAssociations.push(beers[0].setGenres(genres[0]))
-
     return genreBeerAssociations
 }
 
@@ -47,7 +46,7 @@ const createUsers = totalUsers => {
         password: '456',
         role: 'admin',
         city: chance.city(),
-        state: chance.state({ full: true}),
+        state: chance.state({ full: true})
       },
       {
         firstName: 'TEST',
@@ -55,7 +54,7 @@ const createUsers = totalUsers => {
         email: 'TEST.com',
         password: '123',
         city: chance.city(),
-        state: chance.state({ full: true}),
+        state: chance.state({ full: true})
       }
     ]
     const emails = chance.unique(chance.email, totalUsers)
@@ -99,7 +98,7 @@ async function seed() {
         city: 'Ithaca', state: 'New York', imageUrl: baseUrl + '/companyImages/Ithaca.png', ownerImage: baseUrl + '/companyImages/founders/Ithaca-Founder.png', site: 'https://www.ithacabeer.com/homepage'
       }),
       Brewery.create({
-        name: 'New Belgium Brewing Company', owner: '100% Employee owned', description: 'New Belgium Brewing Purpose Statement: To manifest our love and talent by crafting our customers\' favorite brands and proving business can be a force for good.',
+        name: 'New Belgium Brewing Company', owner: '100% Employee Owned', description: 'New Belgium Brewing Purpose Statement: To manifest our love and talent by crafting our customers\' favorite brands and proving business can be a force for good.',
         city: 'Fort Collins', state: 'Colorado', imageUrl: baseUrl + '/companyImages/NewBelgium.png', ownerImage: baseUrl + '/companyImages/founders/New-Belgium-Founder.png', site: 'https://www.newbelgium.com/'
       }),
       Brewery.create({
@@ -282,6 +281,7 @@ price: 3.00, availability: 'available', imageUrl: baseUrl + '/companyBeers/Radia
     }
 
     await Promise.all(beerReviewAssociations)
+    // await Promise.all()
     console.log(`Made ${beerReviewAssociations.length} associations for beer reviews`)
     console.log(`seeded ${breweries.length} breweries`)
     console.log(`seeded ${genres.length} genres`)
@@ -301,7 +301,7 @@ seed()
   })
   .then(() => {
     console.log('closing db connection')
-    db.close()
+    //db.close()
     console.log('db connection closed')
   })
 

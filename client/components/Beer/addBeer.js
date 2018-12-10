@@ -3,7 +3,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom';
-import {addBeer} from '../../store'
+import {addBeer} from '../../store';
 
 class CreateBeer extends React.Component {
     constructor(props){

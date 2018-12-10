@@ -51,7 +51,21 @@ nav a {
   color: white;
   align-items: center;
   background: antiquewhite;
-  z-index: 5;
+  /* z-index: 5; */
+}
+
+.intro-background {
+  padding-top: 2%;
+  height: 97vh;
+  /* width: 100%; */
+  background-image: url('/websiteImages/backgroundImage.png');
+  box-shadow: 0px 0pt 5pt 6pt #492D1F;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* display: block; */
+  /* margin: auto; */
 }
 
 .about {
@@ -301,7 +315,7 @@ nav a {
 INTRO PAGE 
 */
 
-.intro-background {
+/* .intro-background {
   padding-top: 2%;
   height: 97vh;
   width: 100%;
@@ -313,7 +327,7 @@ INTRO PAGE
   background-size: cover;
   display: block;
   margin: auto;
-}
+} */
 
 .intro-text{
   margin-top: 10vh;
@@ -334,7 +348,7 @@ INTRO PAGE
 
 .intro-text h2 {
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   font-family: 'Fira Sans';
   color: white;
   font-size: 19px;

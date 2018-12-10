@@ -102,6 +102,7 @@ router.put('/:beerId', (req, res, next) => {
           where: {name: genre.name},
         })
           .then(([genre]) => {
+            console.log('HERE BIG TEST !!!!!!', beer.setGenres(genre))
               return beer.setGenres(genre)
           })
       })

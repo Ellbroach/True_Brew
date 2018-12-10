@@ -12,7 +12,7 @@ class Popup extends React.Component{
             <h1>{beer.name}</h1>
             <h2>{beer.abv}</h2>
             <h3>{beer.description}</h3>
-          <button onClick={this.props.closePopup}>close</button>
+          <button onClick={this.props.closePopup}>CLOSE</button>
           </div>
         </div>
       );
